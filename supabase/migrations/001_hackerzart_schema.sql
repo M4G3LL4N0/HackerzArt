@@ -1,12 +1,6 @@
 -- Create hackerzart schema
 CREATE SCHEMA hackerzart;
 
--- Enable Row Level Security
-ALTER TABLE hackerzart.profiles ENABLE ROW LEVEL SECURITY;
-ALTER TABLE hackerzart.generations ENABLE ROW LEVEL SECURITY;
-ALTER TABLE hackerzart.style_presets ENABLE ROW LEVEL SECURITY;
-ALTER TABLE hackerzart.user_settings ENABLE ROW LEVEL SECURITY;
-
 -- Profiles table
 CREATE TABLE hackerzart.profiles (
   id uuid PRIMARY KEY REFERENCES auth.users(id) ON DELETE CASCADE,
