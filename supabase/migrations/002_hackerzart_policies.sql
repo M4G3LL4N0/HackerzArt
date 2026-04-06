@@ -1,4 +1,5 @@
 
+
 -- Profiles policies
 CREATE POLICY "Users can view their own profile" 
 ON hackerzart.profiles 
