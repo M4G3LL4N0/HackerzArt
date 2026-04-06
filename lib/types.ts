@@ -3,9 +3,9 @@ export interface Generation {
   user_id: string
   prompt: string
   style_slug: string
-  source_image_url?: string
+  source_image_url: string | null
   ascii_output: string
-  preview_image_url?: string
+  preview_image_url: string | null
   status: 'pending' | 'processing' | 'completed' | 'failed'
   width: number
   density: 'low' | 'medium' | 'high'

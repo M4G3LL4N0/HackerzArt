@@ -1,6 +1,22 @@
 import { Generation } from '@/lib/types'
 
-export async function getPublicGallery(): Promise<Generation[]> {
+interface GalleryItem {
+  id: string
+  user_id: string
+  prompt: string
+  style_slug: string
+  source_image_url: string | null
+  ascii_output: string
+  preview_image_url: string | null
+  status: 'completed'
+  width: number
+  density: string
+  contrast: string
+  is_public: boolean
+  created_at: string
+}
+
+export async function getPublicGallery(): Promise<GalleryItem[]> {
   return [
     {
       id: 'GH-001',
