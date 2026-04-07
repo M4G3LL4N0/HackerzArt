@@ -23,6 +23,9 @@ const config: Config = {
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+        'gradient-to-b': 'linear-gradient(to bottom, var(--tw-gradient-stops))',
+        'gradient-to-r': 'linear-gradient(to right, var(--tw-gradient-stops))',
+        'radial-gradient': 'radial-gradient(circle, var(--tw-gradient-stops))',
       },
       boxShadow: {
         glow: '0 0 12px rgba(255, 77, 90, 0.3)',

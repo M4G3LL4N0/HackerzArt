@@ -64,7 +64,7 @@ export default function GalleryPage() {
           {galleryItems.map((item) => (
             <article
               key={item.id}
-              className="rounded-3xl border border-white/10 bg-white/[0.03] p-5 backdrop-blur-sm"
+              className="group rounded-3xl border border-white/10 bg-white/[0.03] p-5 backdrop-blur-sm transition hover:border-hackerzart.accent/30 hover:bg-white/[0.05]"
             >
               <div className="flex items-start justify-between gap-4">
                 <div>
@@ -81,8 +81,8 @@ export default function GalleryPage() {
                 </span>
               </div>
 
-              <div className="mt-5 overflow-x-auto rounded-2xl border border-white/10 bg-black/60 p-4">
-                <pre className="text-[9px] leading-[1.2] text-white/75">
+              <div className="mt-5 overflow-x-auto rounded-2xl border border-white/10 bg-black/60 p-4 transition group-hover:border-hackerzart.accent/30">
+                <pre className="text-[9px] leading-[1.2] text-white/75 font-mono">
 {`@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 @@@@@@ ${item.style.toUpperCase()} OUTPUT @@@@@@
 @@ ${item.id} :: ${item.title.padEnd(16, ' ').slice(0, 16)} @@
