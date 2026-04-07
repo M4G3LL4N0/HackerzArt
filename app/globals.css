@@ -38,6 +38,15 @@ body {
   .bg-surface {
     background-color: theme('colors.hackerzart.surface');
   }
+
+  .bg-glass {
+    background: linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.03) 0%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    backdrop-filter: blur(2px);
+  }
   
   .bg-scanlines {
     background-image: url('/public/scanlines.svg');
