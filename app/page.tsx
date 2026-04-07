@@ -21,7 +21,9 @@ const sampleAsciiArt = `
 export default function Home() {
   return (
     <div className="flex min-h-screen flex-col bg-gradient-radial">
+      <div className="absolute inset-0 bg-layer pointer-events-none" />
       <div className="absolute inset-0 bg-noise pointer-events-none" />
+      <div className="absolute inset-0 bg-grid opacity-5 pointer-events-none" />
       <Header />
       <main className="flex flex-1 flex-col px-6 py-24">
         <div className="mx-auto flex w-full max-w-7xl flex-col gap-16">

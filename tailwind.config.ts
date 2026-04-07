@@ -18,8 +18,10 @@ const config: Config = {
           muted: '#6E6E8A',
           gradient: {
             start: '#0A0A1A',
-            end: '#1A0A1A',
+            end: '#121225',
             center: '#2A0A2A',
+            deep: '#05050F',
+            mid: '#10101E',
           },
           styles: {
             hacker: '#00FF9D',
