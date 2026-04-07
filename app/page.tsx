@@ -30,9 +30,13 @@ export default function Home() {
           <section className="grid gap-16 md:grid-cols-2">
             <div className="flex flex-col justify-center gap-6">
               <h1 className="text-5xl font-bold tracking-tighter md:text-7xl">
-                <span className="text-gradient animate-float">Turn signal</span>
+                <span className="text-gradient animate-float bg-clip-text text-transparent bg-[length:400%_400%] animate-shimmer">
+                  Turn signal
+                </span>
                 <br />
-                <span className="text-white">into identity.</span>
+                <span className="text-white relative before:absolute before:-left-1 before:-right-1 before:bottom-0 before:h-1 before:bg-hackerzart-secondary before:opacity-30 before:rounded-full">
+                  into identity.
+                </span>
               </h1>
               <p className="text-xl text-hackerzart-muted">
                 The premium engine for machine-rendered monochrome systems.
@@ -76,7 +80,7 @@ export default function Home() {
               <p className="micro-label">HackerzArt / Style System</p>
               <h2 className="text-3xl font-semibold tracking-tight mt-2">Style System</h2>
             </div>
-            <div className="grid grid-cols-2 gap-4 md:grid-cols-5">
+            <div className="grid grid-cols-2 gap-4 md:grid-cols-5 relative before:absolute before:-left-6 before:top-0 before:bottom-0 before:w-px before:bg-gradient-to-b before:from-transparent before:via-hackerzart-secondary before:to-transparent">
               {[
                 { name: 'Hacker', slug: 'hacker', desc: 'Cyberpunk signal processing' },
                 { name: 'Keygen', slug: 'keygen', desc: 'Digital authenticity markers' },

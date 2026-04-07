@@ -158,10 +158,13 @@ body {
   
   .text-gradient {
     background: linear-gradient(
-      45deg,
-      theme('colors.hackerzart.secondary') 0%,
-      theme('colors.hackerzart.accent') 100%
+      to right,
+      theme('colors.hackerzart.secondary'),
+      theme('colors.hackerzart.accent'),
+      theme('colors.hackerzart.tertiary'),
+      theme('colors.hackerzart.secondary')
     );
+    background-size: 400% 400%;
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
