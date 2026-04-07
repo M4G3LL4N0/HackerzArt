@@ -48,6 +48,18 @@ body {
     backdrop-filter: blur(2px);
   }
 
+  .micro-label {
+    @apply text-xs uppercase tracking-[0.28em] text-white/45;
+  }
+
+  .micro-border {
+    @apply border-b border-white/10;
+  }
+
+  .terminal-input {
+    @apply bg-transparent border-none outline-none caret-hackerzart-secondary;
+  }
+
   .style-card-hover {
     transition: transform 0.2s ease, box-shadow 0.2s ease;
   }

@@ -37,9 +37,19 @@ export default function Home() {
               <p className="text-xl text-hackerzart-muted">
                 The premium engine for machine-rendered monochrome systems.
               </p>
-              <div className="flex gap-4">
-                <Button>Start Creating</Button>
-                <Button variant="secondary">Explore Gallery</Button>
+              <div className="flex flex-col gap-4">
+                <div className="flex gap-4">
+                  <Button>Start Creating</Button>
+                  <Button variant="secondary">Explore Gallery</Button>
+                </div>
+                <div className="relative">
+                  <input 
+                    type="text" 
+                    placeholder="Enter command..." 
+                    className="terminal-input w-full bg-transparent border-b border-hackerzart-border/50 py-2 pl-2 pr-8 font-mono text-sm focus:border-hackerzart-secondary focus:ring-0"
+                  />
+                  <span className="absolute right-2 top-1/2 -translate-y-1/2 text-hackerzart-secondary animate-caret-blink">_</span>
+                </div>
               </div>
             </div>
             <div className="relative">
@@ -50,7 +60,10 @@ export default function Home() {
           </section>
 
           <section className="space-y-6">
-            <h2 className="text-3xl font-semibold tracking-tight">Style System</h2>
+            <div className="micro-border pb-6">
+              <p className="micro-label">HackerzArt / Style System</p>
+              <h2 className="text-3xl font-semibold tracking-tight mt-2">Style System</h2>
+            </div>
             <div className="grid grid-cols-2 gap-4 md:grid-cols-5">
               {[
                 { name: 'Hacker', slug: 'hacker', desc: 'Cyberpunk signal processing' },
