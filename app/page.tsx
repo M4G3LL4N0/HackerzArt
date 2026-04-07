@@ -20,14 +20,17 @@ const sampleAsciiArt = `
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen flex-col">
+    <div className="flex min-h-screen flex-col bg-gradient-radial">
+      <div className="absolute inset-0 bg-noise pointer-events-none" />
       <Header />
       <main className="flex flex-1 flex-col px-6 py-24">
         <div className="mx-auto flex w-full max-w-7xl flex-col gap-16">
           <section className="grid gap-16 md:grid-cols-2">
             <div className="flex flex-col justify-center gap-6">
-              <h1 className="text-5xl font-bold tracking-tight md:text-6xl">
-                Turn signal into identity.
+              <h1 className="text-5xl font-bold tracking-tighter md:text-7xl">
+                <span className="text-gradient">Turn signal</span>
+                <br />
+                <span className="text-white">into identity.</span>
               </h1>
               <p className="text-xl text-hackerzart-muted">
                 The premium engine for machine-rendered monochrome systems.

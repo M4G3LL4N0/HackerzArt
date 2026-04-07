@@ -9,13 +9,18 @@ const config: Config = {
     extend: {
       colors: {
         hackerzart: {
-          DEFAULT: '#0A0A1A',
+          DEFAULT: '#080814',
           accent: '#FF4D5A',
           secondary: '#00C4FF',
           tertiary: '#9A4DFF',
           surface: '#1A1A2E',
           border: '#2E2E4A',
           muted: '#6E6E8A',
+          gradient: {
+            start: '#0A0A1A',
+            end: '#1A0A1A',
+            center: '#2A0A2A',
+          },
         },
       },
       backgroundImage: {
