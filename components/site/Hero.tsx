@@ -2,13 +2,20 @@ export function Hero() {
   return (
     <section className="relative h-[100vh] min-h-[800px] overflow-hidden bg-gradient-to-b from-hackerzart.DEFAULT via-hackerzart.surface/10 to-hackerzart.DEFAULT">
       {/* Ornamental border elements */}
-      <div className="absolute left-0 top-0 h-full w-20 border-r border-hackerzart.border/10" />
-      <div className="absolute right-0 top-0 h-full w-20 border-l border-hackerzart.border/10" />
+      <div className="absolute left-0 top-0 h-full w-20 border-r border-hackerzart.border/10 bg-gradient-to-b from-transparent via-hackerzart.tertiary/5 to-transparent" />
+      <div className="absolute right-0 top-0 h-full w-20 border-l border-hackerzart.border/10 bg-gradient-to-b from-transparent via-hackerzart.secondary/5 to-transparent" />
+      
+      {/* Terminal frame elements */}
+      <div className="absolute left-20 top-0 h-1 w-[calc(100%-40px)] bg-gradient-to-r from-transparent via-hackerzart.accent/30 to-transparent" />
+      <div className="absolute left-20 bottom-0 h-1 w-[calc(100%-40px)] bg-gradient-to-r from-transparent via-hackerzart.secondary/30 to-transparent" />
       <div className="absolute inset-0 z-10 flex flex-col items-center justify-center gap-8 px-6 text-center">
         <div className="space-y-6">
           <h1 className="text-6xl font-bold tracking-tighter text-white sm:text-7xl md:text-8xl">
-            <span className="bg-gradient-to-r from-hackerzart.accent to-hackerzart.secondary bg-clip-text text-transparent">
-              HackerzArt
+            <span className="relative">
+              <span className="bg-gradient-to-r from-hackerzart.accent to-hackerzart.secondary bg-clip-text text-transparent">
+                HackerzArt
+              </span>
+              <span className="absolute -right-4 top-0 text-xs text-hackerzart.accent">_</span>
             </span>
           </h1>
           <p className="mx-auto max-w-2xl text-lg text-muted">

@@ -1,6 +1,6 @@
 export function Header() {
   return (
-    <header className="fixed top-0 z-50 w-full border-b border-hackerzart.border/20 bg-surface/95 backdrop-blur">
+    <header className="fixed top-0 z-50 w-full border-b border-hackerzart.border/20 bg-surface/95 backdrop-blur supports-[backdrop-filter]:bg-surface/80">
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6">
         <div className="flex items-center gap-8">
           <h1 className="text-xl font-semibold tracking-tight">

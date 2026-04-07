@@ -49,6 +49,7 @@ export default function TechnologyPage() {
               className="group relative rounded-3xl border border-hackerzart.border/20 bg-gradient-to-b from-white/5 to-white/[0.01] p-6 backdrop-blur-sm transition-all hover:shadow-glow-secondary"
             >
               <div className="absolute -inset-1 -z-10 rounded-3xl bg-gradient-to-br from-hackerzart.tertiary/10 via-transparent to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
+              <div className="absolute -right-3 -top-3 h-6 w-6 rounded-full border border-hackerzart.border/30 bg-gradient-to-br from-hackerzart.accent/10 to-hackerzart.secondary/10" />
               <p className="text-xs uppercase tracking-[0.22em] text-white/35">
                 Core system
               </p>

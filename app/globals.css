@@ -10,6 +10,19 @@ body {
 }
 
 @layer utilities {
+  .terminal-caret {
+    position: relative;
+  }
+  .terminal-caret::after {
+    content: '_';
+    position: absolute;
+    right: -0.5em;
+    animation: blink 1s step-end infinite;
+  }
+  @keyframes blink {
+    from, to { opacity: 1 }
+    50% { opacity: 0 }
+  }
   .bg-ornament {
     background-image: 
       radial-gradient(circle at 1px 1px, theme('colors.hackerzart.border') 1px, transparent 0);

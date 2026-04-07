@@ -68,7 +68,10 @@ export default function GalleryPage() {
             >
               {/* Collector's edition badge */}
               <div className="absolute -right-3 -top-3 rotate-6 rounded-full bg-gradient-to-r from-hackerzart.accent to-hackerzart.secondary px-3 py-1 text-xs font-medium text-black shadow-md">
-                #{item.id}
+                <span className="relative">
+                  #{item.id}
+                  <span className="absolute -right-1 -top-1 h-1.5 w-1.5 rounded-full bg-black/20" />
+                </span>
               </div>
               <div className="flex items-start justify-between gap-4">
                 <div>
@@ -86,6 +89,11 @@ export default function GalleryPage() {
               </div>
 
               <div className="mt-5 overflow-x-auto rounded-2xl border border-white/10 bg-black/60 p-4 transition group-hover:border-hackerzart.accent/30">
+                <div className="absolute right-4 top-4 flex gap-1">
+                  <div className="h-2 w-2 rounded-full bg-hackerzart.accent/70" />
+                  <div className="h-2 w-2 rounded-full bg-hackerzart.secondary/70" />
+                  <div className="h-2 w-2 rounded-full bg-hackerzart.tertiary/70" />
+                </div>
                 <pre className="text-[9px] leading-[1.2] text-white/75 font-mono">
 {`@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 @@@@@@ ${item.style.toUpperCase()} OUTPUT @@@@@@
