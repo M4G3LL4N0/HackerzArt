@@ -5,4 +5,36 @@
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: theme('colors.hackerzart.DEFAULT');
+  color: white;
+}
+
+@layer utilities {
+  .bg-surface {
+    background-color: theme('colors.hackerzart.surface');
+  }
+  
+  .bg-gradient-radial {
+    background-image: radial-gradient(
+      circle at center,
+      theme('colors.hackerzart.tertiary') 0%,
+      theme('colors.hackerzart.DEFAULT') 70%
+    );
+  }
+  
+  .border-hackerzart {
+    border-color: theme('colors.hackerzart.border');
+  }
+  
+  .text-muted {
+    color: theme('colors.hackerzart.muted');
+  }
+  
+  .glow {
+    box-shadow: theme('boxShadow.glow');
+  }
+  
+  .glow-secondary {
+    box-shadow: theme('boxShadow.glow-secondary');
+  }
 }
