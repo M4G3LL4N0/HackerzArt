@@ -40,7 +40,11 @@ export default function Home() {
                 <Button variant="secondary">Explore Gallery</Button>
               </div>
             </div>
-            <AsciiPanel code={sampleAsciiArt} />
+            <div className="relative">
+              <AsciiPanel code={sampleAsciiArt} className="ascii-panel border-hackerzart-border/50 shadow-ascii-glow hover:shadow-ascii-glow/50 transition-all" />
+              <div className="absolute inset-0 bg-scanlines pointer-events-none" />
+              <div className="absolute inset-0 bg-grid pointer-events-none" />
+            </div>
           </section>
 
           <section className="space-y-6">

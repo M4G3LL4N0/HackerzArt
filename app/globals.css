@@ -55,6 +55,37 @@ body {
     mix-blend-mode: overlay;
   }
   
+  .ascii-panel {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .ascii-panel::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 196, 255, 0.05) 0%,
+      transparent 50%,
+      rgba(0, 196, 255, 0.05) 100%
+    );
+    animation: ascii-shimmer 3s ease-in-out infinite;
+    pointer-events: none;
+  }
+  
+  .ascii-panel::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+      circle at center,
+      rgba(0, 196, 255, 0.1) 0%,
+      transparent 70%
+    );
+    pointer-events: none;
+  }
+  
   .bg-gradient-radial {
     background-image: radial-gradient(
       circle at center,

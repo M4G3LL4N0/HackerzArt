@@ -33,6 +33,22 @@ const config: Config = {
       boxShadow: {
         glow: '0 0 12px rgba(255, 77, 90, 0.3)',
         'glow-secondary': '0 0 12px rgba(0, 196, 255, 0.3)',
+        'ascii-glow': '0 0 24px rgba(0, 196, 255, 0.2)',
+        'ascii-inner': 'inset 0 0 12px rgba(0, 196, 255, 0.1)',
+      },
+      animation: {
+        'ascii-flicker': 'flicker 2s ease-in-out infinite',
+        'ascii-shimmer': 'shimmer 3s ease-in-out infinite',
+      },
+      keyframes: {
+        flicker: {
+          '0%, 100%': { opacity: '1' },
+          '50%': { opacity: '0.95' },
+        },
+        shimmer: {
+          '0%, 100%': { backgroundPosition: '0% 50%' },
+          '50%': { backgroundPosition: '100% 50%' },
+        },
       },
     },
   },
