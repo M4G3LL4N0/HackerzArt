@@ -101,6 +101,7 @@ export default function Home() {
                   }}
                 >
                   <div className={`absolute inset-0 bg-gradient-to-b from-hackerzart-styles-${style.slug}/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity`} />
+                  <div className="absolute inset-0 bg-hackerzart-styles-${style.slug}/5 animate-hover-glow opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
                   <div className="flex h-full flex-col justify-between">
                     <div className="flex items-center gap-2">
                       <div className={`w-2 h-2 rounded-full bg-hackerzart-styles-${style.slug}`} />
