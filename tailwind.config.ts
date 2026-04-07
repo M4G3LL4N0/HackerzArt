@@ -49,6 +49,7 @@ const config: Config = {
         'ascii-flicker': 'flicker 2s ease-in-out infinite',
         'ascii-shimmer': 'shimmer 3s ease-in-out infinite',
         'caret-blink': 'blink 1s step-end infinite',
+        'float': 'float 6s ease-in-out infinite',
       },
       keyframes: {
         flicker: {

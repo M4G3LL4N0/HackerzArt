@@ -30,7 +30,7 @@ export default function Home() {
           <section className="grid gap-16 md:grid-cols-2">
             <div className="flex flex-col justify-center gap-6">
               <h1 className="text-5xl font-bold tracking-tighter md:text-7xl">
-                <span className="text-gradient">Turn signal</span>
+                <span className="text-gradient animate-float">Turn signal</span>
                 <br />
                 <span className="text-white">into identity.</span>
               </h1>
@@ -52,10 +52,14 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <div className="relative">
-              <AsciiPanel code={sampleAsciiArt} className="ascii-panel border-hackerzart-border/50 shadow-ascii-glow hover:shadow-ascii-glow/50 transition-all" />
+            <div className="relative animate-float" style={{animationDelay: '1s'}}>
+              <AsciiPanel 
+                code={sampleAsciiArt} 
+                className="ascii-panel border-hackerzart-border/50 shadow-ascii-glow hover:shadow-ascii-glow/50 transition-all" 
+              />
               <div className="absolute inset-0 bg-scanlines pointer-events-none" />
               <div className="absolute inset-0 bg-grid pointer-events-none" />
+              <div className="absolute -bottom-4 left-0 right-0 h-4 bg-gradient-to-t from-black/80 to-transparent pointer-events-none" />
             </div>
           </section>
 
