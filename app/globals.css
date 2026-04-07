@@ -47,6 +47,14 @@ body {
     );
     backdrop-filter: blur(2px);
   }
+
+  .style-card-hover {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .style-card-hover:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  }
   
   .bg-scanlines {
     background-image: url('/public/scanlines.svg');

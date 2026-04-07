@@ -50,12 +50,27 @@ export default function Home() {
           <section className="space-y-6">
             <h2 className="text-3xl font-semibold tracking-tight">Style System</h2>
             <div className="grid grid-cols-2 gap-4 md:grid-cols-5">
-              {['Hacker', 'Keygen', 'Gothic', 'Baroque', 'Terminal'].map((style) => (
+              {[
+                { name: 'Hacker', slug: 'hacker', desc: 'Cyberpunk signal processing' },
+                { name: 'Keygen', slug: 'keygen', desc: 'Digital authenticity markers' },
+                { name: 'Gothic', slug: 'gothic', desc: 'Ornate architectural forms' },
+                { name: 'Baroque', slug: 'baroque', desc: 'Classical decorative systems' },
+                { name: 'Terminal', slug: 'terminal', desc: 'Minimal machine interface' },
+              ].map((style) => (
                 <div 
-                  key={style}
-                  className="aspect-square rounded-xl border border-hackerzart-border bg-hackerzart-surface p-6 transition-all hover:border-hackerzart-accent/30 hover:shadow-glow"
+                  key={style.slug}
+                  className={`group relative aspect-square overflow-hidden rounded-xl border border-hackerzart-border/20 bg-hackerzart-surface/50 p-6 transition-all hover:border-hackerzart-styles-${style.slug}/50 hover:shadow-glow hover:shadow-hackerzart-styles-${style.slug}/20`}
                 >
-                  <h3 className="font-medium">{style}</h3>
+                  <div className={`absolute inset-0 bg-gradient-to-b from-hackerzart-styles-${style.slug}/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity`} />
+                  <div className="flex h-full flex-col justify-between">
+                    <div className="font-mono text-xs uppercase tracking-widest text-hackerzart-muted">
+                      {style.slug}
+                    </div>
+                    <div className="space-y-2">
+                      <h3 className="text-lg font-medium">{style.name}</h3>
+                      <p className="text-sm text-hackerzart-muted">{style.desc}</p>
+                    </div>
+                  </div>
                 </div>
               ))}
             </div>

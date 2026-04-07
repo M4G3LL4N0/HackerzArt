@@ -21,6 +21,13 @@ const config: Config = {
             end: '#1A0A1A',
             center: '#2A0A2A',
           },
+          styles: {
+            hacker: '#00FF9D',
+            keygen: '#FF4D9D',
+            gothic: '#C84DFF',
+            baroque: '#FFB84D',
+            terminal: '#4D9DFF',
+          },
         },
       },
       backgroundImage: {
