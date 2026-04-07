@@ -42,17 +42,18 @@ export default function Home() {
                   <Button className="animate-pulse">Start Creating</Button>
                   <Button variant="secondary">Explore Gallery</Button>
                 </div>
-                <div className="relative">
+                <div className="relative group">
                   <input 
                     type="text" 
                     placeholder="Enter command..." 
-                    className="terminal-input w-full bg-transparent border-b border-hackerzart-border/50 py-2 pl-2 pr-8 font-mono text-sm focus:border-hackerzart-secondary focus:ring-0"
+                    className="terminal-input w-full bg-transparent border-b border-hackerzart-border/50 py-2 pl-2 pr-8 font-mono text-sm focus:border-hackerzart-secondary focus:ring-0 transition-colors"
                   />
-                  <span className="absolute right-2 top-1/2 -translate-y-1/2 text-hackerzart-secondary animate-caret-blink">_</span>
+                  <span className="absolute right-2 top-1/2 -translate-y-1/2 text-hackerzart-secondary animate-caret-blink group-hover:text-hackerzart-accent transition-colors">_</span>
+                  <div className="absolute bottom-0 left-0 h-px w-0 group-hover:w-full bg-hackerzart-secondary transition-all duration-300" />
                 </div>
               </div>
             </div>
-            <div className="relative animate-float" style={{animationDelay: '1s', animationDuration: '8s'}}>
+            <div className="relative animate-float hover:animate-none hover:scale-[1.02] transition-transform" style={{animationDelay: '1s', animationDuration: '8s'}}>
               <AsciiPanel 
                 code={sampleAsciiArt} 
                 className="ascii-panel border-hackerzart-border/50 shadow-ascii-glow hover:shadow-ascii-glow/50 transition-all" 

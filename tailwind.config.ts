@@ -30,6 +30,12 @@ const config: Config = {
             baroque: '#FFB84D',
             terminal: '#4D9DFF',
           },
+          status: {
+            pending: '#FFB84D',
+            processing: '#4D9DFF',
+            completed: '#00FF9D',
+            failed: '#FF4D5A',
+          },
         },
       },
       backgroundImage: {
