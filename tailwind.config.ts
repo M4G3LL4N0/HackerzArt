@@ -30,6 +30,10 @@ const config: Config = {
             baroque: '#FFB84D',
             terminal: '#4D9DFF',
           },
+          highlight: {
+            primary: 'rgba(0, 196, 255, 0.1)',
+            secondary: 'rgba(255, 77, 90, 0.1)',
+          },
           status: {
             pending: '#FFB84D',
             processing: '#4D9DFF',

@@ -67,6 +67,10 @@ body {
 
   .terminal-input {
     @apply bg-transparent border-none outline-none caret-hackerzart-secondary;
+    transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  }
+  .terminal-input:focus {
+    @apply shadow-glow-secondary;
   }
 
   .style-card-hover {

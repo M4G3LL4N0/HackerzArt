@@ -39,8 +39,15 @@ export default function Home() {
               </p>
               <div className="flex flex-col gap-4">
                 <div className="flex gap-4">
-                  <Button className="animate-pulse">Start Creating</Button>
-                  <Button variant="secondary">Explore Gallery</Button>
+                  <Button className="animate-pulse hover:shadow-glow">
+                    Start Creating
+                  </Button>
+                  <Button 
+                    variant="secondary" 
+                    className="hover:shadow-glow-secondary"
+                  >
+                    Explore Gallery
+                  </Button>
                 </div>
                 <div className="relative group">
                   <input 
@@ -80,6 +87,10 @@ export default function Home() {
                 <div 
                   key={style.slug}
                   className={`group relative aspect-square overflow-hidden rounded-xl border border-hackerzart-border/20 bg-hackerzart-surface/50 p-6 transition-all hover:border-hackerzart-styles-${style.slug}/50 hover:shadow-glow hover:shadow-hackerzart-styles-${style.slug}/20 style-card-hover animate-pulse`}
+                  style={{
+                    animationDuration: `${Math.random() * 2 + 2}s`,
+                    animationDelay: `${Math.random() * 2}s`
+                  }}
                   style={{animationDuration: '3s'}}
                 >
                   <div className={`absolute inset-0 bg-gradient-to-b from-hackerzart-styles-${style.slug}/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity`} />
