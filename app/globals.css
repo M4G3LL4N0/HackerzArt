@@ -10,6 +10,18 @@ body {
 }
 
 @layer utilities {
+  .bg-ornament {
+    background-image: 
+      radial-gradient(circle at 1px 1px, theme('colors.hackerzart.border') 1px, transparent 0);
+    background-size: 20px 20px;
+  }
+
+  .bg-grid {
+    background-image: 
+      linear-gradient(to right, theme('colors.hackerzart.border/10') 1px, transparent 1px),
+      linear-gradient(to bottom, theme('colors.hackerzart.border/10') 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
   .bg-surface {
     background-color: theme('colors.hackerzart.surface');
   }

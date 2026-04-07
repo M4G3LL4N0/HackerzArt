@@ -46,8 +46,9 @@ export default function TechnologyPage() {
           {pillars.map((pillar) => (
             <article
               key={pillar.title}
-              className="rounded-3xl border border-white/10 bg-white/[0.03] p-6 backdrop-blur-sm"
+              className="group relative rounded-3xl border border-hackerzart.border/20 bg-gradient-to-b from-white/5 to-white/[0.01] p-6 backdrop-blur-sm transition-all hover:shadow-glow-secondary"
             >
+              <div className="absolute -inset-1 -z-10 rounded-3xl bg-gradient-to-br from-hackerzart.tertiary/10 via-transparent to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
               <p className="text-xs uppercase tracking-[0.22em] text-white/35">
                 Core system
               </p>

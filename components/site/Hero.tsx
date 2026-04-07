@@ -1,6 +1,9 @@
 export function Hero() {
   return (
-    <section className="relative h-[100vh] min-h-[800px] overflow-hidden bg-gradient-to-b from-hackerzart.DEFAULT via-hackerzart.surface/20 to-hackerzart.DEFAULT">
+    <section className="relative h-[100vh] min-h-[800px] overflow-hidden bg-gradient-to-b from-hackerzart.DEFAULT via-hackerzart.surface/10 to-hackerzart.DEFAULT">
+      {/* Ornamental border elements */}
+      <div className="absolute left-0 top-0 h-full w-20 border-r border-hackerzart.border/10" />
+      <div className="absolute right-0 top-0 h-full w-20 border-l border-hackerzart.border/10" />
       <div className="absolute inset-0 z-10 flex flex-col items-center justify-center gap-8 px-6 text-center">
         <div className="space-y-6">
           <h1 className="text-6xl font-bold tracking-tighter text-white sm:text-7xl md:text-8xl">

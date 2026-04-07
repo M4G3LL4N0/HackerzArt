@@ -64,8 +64,12 @@ export default function GalleryPage() {
           {galleryItems.map((item) => (
             <article
               key={item.id}
-              className="group rounded-3xl border border-white/10 bg-white/[0.03] p-5 backdrop-blur-sm transition hover:border-hackerzart.accent/30 hover:bg-white/[0.05]"
+              className="group relative rounded-3xl border border-hackerzart.border/20 bg-gradient-to-b from-white/5 to-white/[0.01] p-5 backdrop-blur-sm transition-all hover:border-hackerzart.accent/40 hover:bg-white/[0.03] hover:shadow-glow"
             >
+              {/* Collector's edition badge */}
+              <div className="absolute -right-3 -top-3 rotate-6 rounded-full bg-gradient-to-r from-hackerzart.accent to-hackerzart.secondary px-3 py-1 text-xs font-medium text-black shadow-md">
+                #{item.id}
+              </div>
               <div className="flex items-start justify-between gap-4">
                 <div>
                   <p className="text-xs uppercase tracking-[0.22em] text-white/40">

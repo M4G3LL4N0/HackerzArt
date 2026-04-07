@@ -58,8 +58,17 @@ export default function PricingPage() {
           {tiers.map((tier) => (
             <article
               key={tier.name}
-              className="rounded-3xl border border-white/10 bg-white/[0.03] p-6 backdrop-blur-sm"
+              className={`relative rounded-3xl border ${
+                tier.name === 'Pro' 
+                  ? 'border-hackerzart.accent/30 shadow-glow' 
+                  : 'border-hackerzart.border/20'
+              } bg-gradient-to-b from-white/5 to-white/[0.01] p-6 backdrop-blur-sm transition-all hover:shadow-glow`}
             >
+              {tier.name === 'Pro' && (
+                <div className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-gradient-to-r from-hackerzart.accent to-hackerzart.secondary px-4 py-1 text-xs font-medium text-black">
+                  Recommended
+                </div>
+              )}
               <div className="space-y-3">
                 <p className="text-xs uppercase tracking-[0.22em] text-white/35">
                   Tier
