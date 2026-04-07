@@ -1,19 +1,35 @@
 import { NextResponse } from 'next/server'
-import { createClient } from '@/lib/supabase/client'
+
+const galleryItems = [
+  {
+    id: 'GH-001',
+    title: 'Cathedral Signal',
+    style: 'gothic',
+    description:
+      'Dense engraved symmetry with ritual framing and dramatic monochrome weight.',
+    isPublic: true,
+  },
+  {
+    id: 'GH-002',
+    title: 'Keygen Relic',
+    style: 'keygen',
+    description:
+      'A cracked-digital intro composition with retro underground line energy.',
+    isPublic: true,
+  },
+  {
+    id: 'GH-003',
+    title: 'Terminal Crown',
+    style: 'terminal',
+    description:
+      'Minimal command-line severity shaped into a clean structural icon.',
+    isPublic: true,
+  },
+]
 
 export async function GET() {
-  const supabase = createClient()
-  
-  const { data: generations, error } = await supabase
-    .from('hackerzart.generations')
-    .select('*')
-    .eq('is_public', true)
-    .order('created_at', { ascending: false })
-    .limit(50)
-
-  if (error) {
-    return NextResponse.json({ error: error.message }, { status: 500 })
-  }
-
-  return NextResponse.json(generations)
+  return NextResponse.json({
+    items: galleryItems,
+    count: galleryItems.length,
+  })
 }

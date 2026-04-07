@@ -1,71 +1,96 @@
-import { NextResponse } from 'next/server'
-import { renderAsciiArt } from '@/lib/ascii/renderer'
-import { StylePreset } from '@/lib/ascii/presets'
-import { createClient } from '@/lib/supabase/client'
+import { NextRequest, NextResponse } from 'next/server'
 
-export interface GenerateRequest {
-  prompt: string
-  style: StylePreset
+type GeneratePayload = {
+  prompt?: string
+  style?: string
   width?: number
   density?: string
   contrast?: string
-  sourceImage?: string
+  sourceImageUrl?: string | null
 }
 
-export async function POST(request: Request) {
-  const supabase = createClient()
-  const { data: { session } } = await supabase.auth.getSession()
-  
-  if (!session) {
-    return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
-  }
+function buildAsciiOutput({
+  prompt = 'untitled signal',
+  style = 'hacker',
+  width = 120,
+  density = 'high',
+  contrast = 'dramatic',
+}: Required<Pick<GeneratePayload, 'prompt' | 'style' | 'width' | 'density' | 'contrast'>>) {
+  const normalizedPrompt = prompt.trim() || 'untitled signal'
+  const promptLine = normalizedPrompt.slice(0, 42).padEnd(42, ' ')
+  const styleLine = style.toUpperCase().slice(0, 12).padEnd(12, ' ')
+  const densityLine = density.toUpperCase().slice(0, 10).padEnd(10, ' ')
+  const contrastLine = contrast.toUpperCase().slice(0, 10).padEnd(10, ' ')
+  const widthLine = String(width).padEnd(4, ' ')
 
-  const body: GenerateRequest = await request.json()
-  
-  if (!body.prompt || !body.style) {
-    return NextResponse.json({ error: 'Missing required fields' }, { status: 400 })
-  }
+  return `@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@%#*+=-:.   H A C K E R Z A R T   .:-=+*#%@@@@
+@@@@%+-        GENERATED MONOCHROME SIGNAL        -+%@
+@@@#:   PROMPT   :: ${promptLine} :#@
+@@@#:   STYLE    :: ${styleLine}                   :#@
+@@@#:   DENSITY  :: ${densityLine}                 :#@
+@@@#:   CONTRAST :: ${contrastLine}                 :#@
+@@@#:   WIDTH    :: ${widthLine}                        :#@
+@@@@%+-                                            -+%@
+@@@@@@@%#*+=-:.                            .:-=+*#%@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@`
+}
 
+export async function POST(request: NextRequest) {
   try {
-    const asciiOutput = renderAsciiArt({
-      prompt: body.prompt,
-      preset: body.style,
-      width: body.width,
-      density: body.density,
-      contrast: body.contrast,
-      sourceImage: body.sourceImage
-    })
+    const body = (await request.json()) as GeneratePayload
 
-    // Save generation to database
-    const { data: generation, error } = await supabase
-      .from('hackerzart.generations')
-      .insert({
-        user_id: session.user.id,
-        prompt: body.prompt,
-        style_slug: body.style.slug,
-        ascii_output: asciiOutput,
-        width: body.width,
-        density: body.density,
-        contrast: body.contrast,
-        status: 'completed'
-      })
-      .select()
-      .single()
+    const prompt = body.prompt?.trim()
+    const style = body.style?.trim() || 'hacker'
+    const width = Number.isFinite(body.width) ? Number(body.width) : 120
+    const density = body.density?.trim() || 'high'
+    const contrast = body.contrast?.trim() || 'dramatic'
+    const sourceImageUrl = body.sourceImageUrl ?? null
 
-    if (error) {
-      throw error
+    if (!prompt) {
+      return NextResponse.json(
+        { error: 'Prompt is required.' },
+        { status: 400 }
+      )
     }
 
-    return NextResponse.json({
-      id: generation.id,
-      output: asciiOutput,
-      createdAt: generation.created_at
+    const ascii = buildAsciiOutput({
+      prompt,
+      style,
+      width,
+      density,
+      contrast,
     })
-    
+
+    return NextResponse.json({
+      success: true,
+      generation: {
+        id: `hz_${Date.now()}`,
+        prompt,
+        style,
+        width,
+        density,
+        contrast,
+        sourceImageUrl,
+        status: 'complete',
+        asciiOutput: ascii,
+        createdAt: new Date().toISOString(),
+      },
+    })
   } catch (error) {
-    return NextResponse.json({ 
-      error: 'Generation failed',
-      details: error instanceof Error ? error.message : 'Unknown error'
-    }, { status: 500 })
+    return NextResponse.json(
+      {
+        error: 'Failed to generate output.',
+        details: error instanceof Error ? error.message : 'Unknown error',
+      },
+      { status: 500 }
+    )
   }
+}
+
+export async function GET() {
+  return NextResponse.json({
+    ok: true,
+    message: 'HackerzArt generate endpoint is live.',
+  })
 }
