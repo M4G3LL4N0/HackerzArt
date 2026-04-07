@@ -50,6 +50,7 @@ const config: Config = {
         'ascii-shimmer': 'shimmer 3s ease-in-out infinite',
         'caret-blink': 'blink 1s step-end infinite',
         'float': 'float 6s ease-in-out infinite',
+        'pulse': 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
       },
       keyframes: {
         flicker: {

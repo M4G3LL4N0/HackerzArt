@@ -27,6 +27,10 @@ body {
     0%, 100% { transform: translateY(0) }
     50% { transform: translateY(-8px) }
   }
+  @keyframes pulse {
+    0%, 100% { opacity: 1 }
+    50% { opacity: 0.5 }
+  }
   .bg-ornament {
     background-image: 
       radial-gradient(circle at 1px 1px, theme('colors.hackerzart.border') 1px, transparent 0);

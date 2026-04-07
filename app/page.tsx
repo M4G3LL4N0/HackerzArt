@@ -39,7 +39,7 @@ export default function Home() {
               </p>
               <div className="flex flex-col gap-4">
                 <div className="flex gap-4">
-                  <Button>Start Creating</Button>
+                  <Button className="animate-pulse">Start Creating</Button>
                   <Button variant="secondary">Explore Gallery</Button>
                 </div>
                 <div className="relative">
