@@ -100,8 +100,11 @@ export default function Home() {
                 >
                   <div className={`absolute inset-0 bg-gradient-to-b from-hackerzart-styles-${style.slug}/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity`} />
                   <div className="flex h-full flex-col justify-between">
-                    <div className="font-mono text-xs uppercase tracking-widest text-hackerzart-muted">
-                      {style.slug}
+                    <div className="flex items-center gap-2">
+                      <div className={`w-2 h-2 rounded-full bg-hackerzart-styles-${style.slug}`} />
+                      <span className="font-mono text-xs uppercase tracking-widest text-hackerzart-muted">
+                        {style.slug}
+                      </span>
                     </div>
                     <div className="space-y-2">
                       <h3 className="text-lg font-medium">{style.name}</h3>
