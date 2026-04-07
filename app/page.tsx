@@ -57,10 +57,11 @@ export default function Home() {
                   <input 
                     type="text" 
                     placeholder="Enter command..." 
-                    className="terminal-input w-full bg-transparent border-b border-hackerzart-border/50 py-2 pl-2 pr-8 font-mono text-sm focus:border-hackerzart-secondary focus:ring-0 transition-colors"
+                    className="terminal-input w-full bg-transparent border-b border-hackerzart-border/50 py-2 pl-2 pr-8 font-mono text-xs tracking-tight focus:border-hackerzart-secondary focus:ring-0 transition-colors placeholder:text-hackerzart-muted/50"
                   />
                   <span className="absolute right-2 top-1/2 -translate-y-1/2 text-hackerzart-secondary animate-caret-blink group-hover:text-hackerzart-accent transition-colors">_</span>
                   <div className="absolute bottom-0 left-0 h-px w-0 group-hover:w-full bg-hackerzart-secondary transition-all duration-300" />
+                  <div className="absolute bottom-0 left-0 h-px w-full opacity-10 bg-hackerzart-secondary" />
                 </div>
               </div>
             </div>
