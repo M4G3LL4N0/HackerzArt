@@ -4,6 +4,7 @@ import { createServerClient } from '@supabase/ssr'
 export const runtime = 'edge'
 
 export async function middleware(request: NextRequest) {
+  try {
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL
   const key =
     process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY ||
@@ -32,8 +33,10 @@ export async function middleware(request: NextRequest) {
   })
 
   await supabase.auth.getUser()
-
   return response
+  } catch (error) {
+    return NextResponse.next()
+  }
 }
 
 export const config = {
