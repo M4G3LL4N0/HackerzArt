@@ -52,7 +52,7 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <div className="relative animate-float" style={{animationDelay: '1s'}}>
+            <div className="relative animate-float" style={{animationDelay: '1s', animationDuration: '8s'}}>
               <AsciiPanel 
                 code={sampleAsciiArt} 
                 className="ascii-panel border-hackerzart-border/50 shadow-ascii-glow hover:shadow-ascii-glow/50 transition-all" 
@@ -79,6 +79,7 @@ export default function Home() {
                 <div 
                   key={style.slug}
                   className={`group relative aspect-square overflow-hidden rounded-xl border border-hackerzart-border/20 bg-hackerzart-surface/50 p-6 transition-all hover:border-hackerzart-styles-${style.slug}/50 hover:shadow-glow hover:shadow-hackerzart-styles-${style.slug}/20 style-card-hover animate-pulse`}
+                  style={{animationDuration: '3s'}}
                 >
                   <div className={`absolute inset-0 bg-gradient-to-b from-hackerzart-styles-${style.slug}/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity`} />
                   <div className="flex h-full flex-col justify-between">
