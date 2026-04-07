@@ -1,48 +1,48 @@
-import { createClient } from '@supabase/ssr'
-import { NextResponse } from 'next/server'
-import type { NextRequest } from 'next/server'
+import { NextResponse, type NextRequest } from 'next/server'
+import { createServerClient, type CookieOptions } from '@supabase/ssr'
 
 export async function middleware(request: NextRequest) {
-  const response = NextResponse.next()
-  
-  if (!process.env.NEXT_PUBLIC_SUPABASE_URL || !process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY) {
-    console.warn('Supabase env vars not found - auth disabled')
-    return response
+  const url = process.env.NEXT_PUBLIC_SUPABASE_URL
+  const key =
+    process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY ||
+    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
+
+  if (!url || !key) {
+    return NextResponse.next({ request })
   }
 
-  try {
-    const supabase = createClient(
-      process.env.NEXT_PUBLIC_SUPABASE_URL!,
-      process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
-      {
-        cookies: {
-          get(name: string) {
-            return request.cookies.get(name)?.value
-          },
-          set(name: string, value: string, options) {
-            response.cookies.set({ name, value, ...options })
-          },
-          remove(name: string, options) {
-            response.cookies.set({ name, value: '', ...options })
-          }
-        }
-      }
-    )
-    const { data: { session } } = await supabase.auth.getSession()
+  let response = NextResponse.next({ request })
 
-    if (!session && request.nextUrl.pathname.startsWith('/dashboard')) {
-      const loginUrl = new URL('/login', request.url)
-      loginUrl.searchParams.set('redirectedFrom', request.nextUrl.pathname)
-      return NextResponse.redirect(loginUrl)
-    }
-  } catch (error) {
-    console.error('Middleware error:', error)
-  }
+  const supabase = createServerClient(url, key, {
+    cookies: {
+      getAll() {
+        return request.cookies.getAll()
+      },
+      setAll(
+        cookiesToSet: Array<{
+          name: string
+          value: string
+          options: CookieOptions
+        }>
+      ) {
+        cookiesToSet.forEach(({ name, value }) => {
+          request.cookies.set(name, value)
+        })
+
+        response = NextResponse.next({ request })
+
+        cookiesToSet.forEach(({ name, value, options }) => {
+          response.cookies.set(name, value, options)
+        })
+      },
+    },
+  })
+
+  await supabase.auth.getUser()
 
   return response
 }
 
 export const config = {
   matcher: ['/dashboard/:path*'],
-  unstable_allowDynamic: ['/node_modules/@supabase/**'],
 }
