@@ -30,7 +30,7 @@ export default function Home() {
           <section className="grid gap-16 md:grid-cols-2">
             <div className="flex flex-col justify-center gap-6">
               <h1 className="text-5xl font-bold tracking-tighter md:text-7xl">
-                <span className="text-gradient animate-float bg-clip-text text-transparent bg-[length:400%_400%] animate-shimmer">
+                <span className="text-gradient bg-clip-text text-transparent">
                   Turn signal
                 </span>
                 <br />
@@ -65,6 +65,7 @@ export default function Home() {
               </div>
             </div>
             <div className="relative animate-float hover:animate-none hover:scale-[1.02] transition-transform will-change-transform" style={{animationDelay: '1s', animationDuration: '8s'}}>
+              <div className="absolute inset-0 bg-gradient-to-b from-black/50 to-transparent pointer-events-none" />
               <AsciiPanel 
                 code={sampleAsciiArt} 
                 className="ascii-panel border-hackerzart-border/50 shadow-ascii-glow hover:shadow-ascii-glow/50 transition-all" 

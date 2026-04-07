@@ -61,6 +61,7 @@ const config: Config = {
         'caret-blink': 'blink 1s step-end infinite',
         'float': 'float 6s ease-in-out infinite',
         'pulse': 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+        'text-shimmer': 'shimmer 8s linear infinite',
       },
       keyframes: {
         flicker: {

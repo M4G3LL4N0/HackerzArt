@@ -168,6 +168,7 @@ body {
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
+    animation: text-shimmer 8s linear infinite;
   }
   
   .border-hackerzart {
