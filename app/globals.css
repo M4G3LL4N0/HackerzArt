@@ -31,6 +31,10 @@ body {
     0%, 100% { opacity: 1 }
     50% { opacity: 0.5 }
   }
+  @keyframes hover-glow {
+    0%, 100% { opacity: 0.3 }
+    50% { opacity: 0.8 }
+  }
   .bg-ornament {
     background-image: 
       radial-gradient(circle at 1px 1px, theme('colors.hackerzart.border') 1px, transparent 0);

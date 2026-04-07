@@ -62,6 +62,7 @@ const config: Config = {
         'float': 'float 6s ease-in-out infinite',
         'pulse': 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
         'text-shimmer': 'shimmer 8s linear infinite',
+        'hover-glow': 'hover-glow 1.5s ease-in-out infinite',
       },
       keyframes: {
         flicker: {

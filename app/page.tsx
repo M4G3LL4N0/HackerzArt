@@ -43,14 +43,16 @@ export default function Home() {
               </p>
               <div className="flex flex-col gap-4">
                 <div className="flex gap-4">
-                  <Button className="animate-pulse hover:shadow-glow">
-                    Start Creating
+                  <Button className="animate-pulse hover:shadow-glow relative overflow-hidden">
+                    <span className="relative z-10">Start Creating</span>
+                    <div className="absolute inset-0 bg-hackerzart-accent/10 animate-hover-glow pointer-events-none" />
                   </Button>
                   <Button 
                     variant="secondary" 
-                    className="hover:shadow-glow-secondary"
+                    className="hover:shadow-glow-secondary relative overflow-hidden"
                   >
-                    Explore Gallery
+                    <span className="relative z-10">Explore Gallery</span>
+                    <div className="absolute inset-0 bg-hackerzart-secondary/10 animate-hover-glow pointer-events-none" />
                   </Button>
                 </div>
                 <div className="relative group">
