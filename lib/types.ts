@@ -1,3 +1,15 @@
+export interface Database {
+  public: {
+    Tables: {
+      generations: {
+        Row: Generation
+        Insert: Partial<Generation>
+        Update: Partial<Generation>
+      }
+    }
+  }
+}
+
 export interface Generation {
   id: string
   user_id: string
