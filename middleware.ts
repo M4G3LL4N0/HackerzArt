@@ -5,8 +5,13 @@ import type { NextRequest } from 'next/server'
 export async function middleware(request: NextRequest) {
   const response = NextResponse.next()
   
+  if (!process.env.NEXT_PUBLIC_SUPABASE_URL || !process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY) {
+    console.warn('Supabase env vars not found - auth disabled')
+    return response
+  }
+
   try {
-    const supabase = createMiddlewareClient({ req: request, res: response })
+    const supabase = createMiddlewareClient({ request, response })
     const { data: { session } } = await supabase.auth.getSession()
 
     if (!session && request.nextUrl.pathname.startsWith('/dashboard')) {
@@ -23,4 +28,5 @@ export async function middleware(request: NextRequest) {
 
 export const config = {
   matcher: ['/dashboard/:path*'],
+  unstable_allowDynamic: ['/node_modules/@supabase/**'],
 }
