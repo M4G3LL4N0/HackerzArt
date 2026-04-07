@@ -1,39 +1,40 @@
 import { createServerClient, type CookieOptions } from '@supabase/ssr'
 import { cookies } from 'next/headers'
 
-export async function createClient() {
+export function createClient() {
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL
   const key =
     process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY ||
     process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
 
   if (!url || !key) {
-    throw new Error(
-      'Missing NEXT_PUBLIC_SUPABASE_URL and NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY or NEXT_PUBLIC_SUPABASE_ANON_KEY'
-    )
+    console.warn('Supabase URL or key not found - using mock client')
+    return {
+      auth: {
+        getUser: () => Promise.resolve({ data: { user: null } }),
+      },
+    } as unknown as ReturnType<typeof createServerClient>
   }
 
-  const cookieStore = await cookies()
+  const cookieStore = cookies()
 
   return createServerClient(url, key, {
     cookies: {
-      getAll() {
-        return cookieStore.getAll()
+      get(name: string) {
+        return cookieStore.get(name)?.value
       },
-      setAll(
-        cookiesToSet: Array<{
-          name: string
-          value: string
-          options: CookieOptions
-        }>
-      ) {
+      set(name: string, value: string, options: CookieOptions) {
         try {
-          cookiesToSet.forEach(({ name, value, options }) => {
-            cookieStore.set(name, value, options)
-          })
-        } catch {
-          // Server Components may not be allowed to write cookies here.
-          // Middleware should handle session refresh when needed.
+          cookieStore.set({ name, value, ...options })
+        } catch (error) {
+          console.error('Failed to set cookie:', error)
+        }
+      },
+      remove(name: string, options: CookieOptions) {
+        try {
+          cookieStore.set({ name, value: '', ...options })
+        } catch (error) {
+          console.error('Failed to remove cookie:', error)
         }
       },
     },
