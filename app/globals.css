@@ -71,6 +71,7 @@ body {
   }
   .terminal-input:focus {
     @apply shadow-glow-secondary;
+    animation: pulse 1.5s ease-in-out infinite;
   }
 
   .style-card-hover {
@@ -118,6 +119,7 @@ body {
       transparent 70%
     );
     pointer-events: none;
+    mix-blend-mode: overlay;
   }
   
   .bg-gradient-radial {

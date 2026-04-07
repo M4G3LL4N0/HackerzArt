@@ -60,7 +60,7 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <div className="relative animate-float hover:animate-none hover:scale-[1.02] transition-transform" style={{animationDelay: '1s', animationDuration: '8s'}}>
+            <div className="relative animate-float hover:animate-none hover:scale-[1.02] transition-transform will-change-transform" style={{animationDelay: '1s', animationDuration: '8s'}}>
               <AsciiPanel 
                 code={sampleAsciiArt} 
                 className="ascii-panel border-hackerzart-border/50 shadow-ascii-glow hover:shadow-ascii-glow/50 transition-all" 
@@ -91,7 +91,6 @@ export default function Home() {
                     animationDuration: `${Math.random() * 2 + 2}s`,
                     animationDelay: `${Math.random() * 2}s`
                   }}
-                  style={{animationDuration: '3s'}}
                 >
                   <div className={`absolute inset-0 bg-gradient-to-b from-hackerzart-styles-${style.slug}/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity`} />
                   <div className="flex h-full flex-col justify-between">
