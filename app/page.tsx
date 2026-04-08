@@ -1,6 +1,7 @@
 import { Button } from '@/components/ui/Button'
 import { Header } from '@/components/Header'
 import { AsciiPanel } from '@/components/AsciiPanel'
+import { renderAscii } from '@/lib/ascii/renderer'
 
 const sampleAsciiArt = `
   ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣤⣶⣶⣶⣶⣶⣤⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
@@ -76,6 +77,45 @@ export default function Home() {
               <div className="absolute inset-0 bg-scanlines pointer-events-none" />
               <div className="absolute inset-0 bg-grid pointer-events-none" />
               <div className="absolute -bottom-4 left-0 right-0 h-4 bg-gradient-to-t from-black/80 to-transparent pointer-events-none" />
+            </div>
+          </section>
+
+          <section className="space-y-6">
+            <div className="micro-border pb-6">
+              <p className="micro-label">HackerzArt / Live Rendering</p>
+              <h2 className="text-3xl font-semibold tracking-tight mt-2">Real-time ASCII Art Preview</h2>
+            </div>
+            <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+              <div className="relative rounded-xl border border-hackerzart-border/20 p-6">
+                <div className="absolute inset-0 bg-gradient-to-b from-black/50 to-transparent pointer-events-none" />
+                <AsciiPanel 
+                  code={renderAscii({
+                    prompt: 'Cyberpunk cityscape',
+                    width: 60,
+                    density: 'medium',
+                    contrast: 'high'
+                  })}
+                  className="ascii-panel border-hackerzart-border/50 shadow-ascii-glow hover:shadow-ascii-glow/50 transition-all" 
+                />
+                <div className="absolute inset-0 bg-scanlines pointer-events-none" />
+                <div className="absolute inset-0 bg-grid pointer-events-none" />
+                <div className="absolute -bottom-4 left-0 right-0 h-4 bg-gradient-to-t from-black/80 to-transparent pointer-events-none" />
+              </div>
+              <div className="relative rounded-xl border border-hackerzart-border/20 p-6">
+                <div className="absolute inset-0 bg-gradient-to-b from-black/50 to-transparent pointer-events-none" />
+                <AsciiPanel 
+                  code={renderAscii({
+                    prompt: 'Futuristic interface',
+                    width: 60,
+                    density: 'high',
+                    contrast: 'medium'
+                  })}
+                  className="ascii-panel border-hackerzart-border/50 shadow-ascii-glow hover:shadow-ascii-glow/50 transition-all" 
+                />
+                <div className="absolute inset-0 bg-scanlines pointer-events-none" />
+                <div className="absolute inset-0 bg-grid pointer-events-none" />
+                <div className="absolute -bottom-4 left-0 right-0 h-4 bg-gradient-to-t from-black/80 to-transparent pointer-events-none" />
+              </div>
             </div>
           </section>
 
