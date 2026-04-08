@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { Header } from '@/components/Header'
 import { AsciiPanel } from '@/components/AsciiPanel'
 import { renderAscii } from '@/lib/ascii/renderer'
+import { cn } from '@/lib/utils'
 
 const sampleAsciiArt = `
   ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣤⣶⣶⣶⣶⣶⣤⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
