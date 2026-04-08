@@ -2,6 +2,7 @@ const stats = [
   { label: 'Generations', value: '128', detail: 'All-time signal renders' },
   { label: 'Public Pieces', value: '19', detail: 'Gallery-ready outputs' },
   { label: 'Active Style', value: 'Hacker', detail: 'Default workspace preset' },
+  { label: 'Style Usage', value: '87%', detail: 'Hacker style dominance' },
 ]
 
 const recentGenerations = [
@@ -70,7 +71,7 @@ export default function DashboardPage() {
           ))}
         </section>
 
-        <section className="grid gap-8 lg:grid-cols-[1.05fr_0.95fr]">
+        <section className="grid gap-8 lg:grid-cols-[1fr_1fr]">
           <article className="rounded-3xl border border-white/10 bg-white/[0.03] p-6 backdrop-blur-sm">
             <div className="mb-5 flex items-center justify-between">
               <div>
@@ -111,37 +112,56 @@ export default function DashboardPage() {
           <article className="rounded-3xl border border-white/10 bg-white/[0.03] p-6 backdrop-blur-sm">
             <div>
               <p className="text-xs uppercase tracking-[0.22em] text-white/40">
-                Live System View
+                Style Insights
               </p>
-              <h2 className="mt-2 text-lg font-medium">Output monitor</h2>
+              <h2 className="mt-2 text-lg font-medium">Your Style Profile</h2>
             </div>
 
-            <div className="mt-5 overflow-x-auto rounded-2xl border border-white/10 bg-black/60 p-4">
-              <pre className="text-[10px] leading-[1.2] text-white/75">
-{`@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-@@@@@@@%#*+=-:.   H A C K E R Z A R T   .:-=+*#%@@@@
-@@@@%+-      dashboard signal monitor active      -+%@
-@@@#:   recent renders indexed and recoverable      :#@
-@@@#:   style presets loaded and ready              :#@
-@@@#:   future API / gallery / identity mode        :#@
-@@@@%+-                                            -+%@
-@@@@@@@%#*+=-:.                            .:-=+*#%@@@@
-@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@`}
-              </pre>
-            </div>
+            <div className="mt-5 space-y-4">
+              <div className="rounded-2xl border border-white/10 bg-black/30 p-4">
+                <div className="flex items-center justify-between">
+                  <h3 className="text-sm font-medium">Top Style</h3>
+                  <span className="rounded-full bg-hackerzart-secondary/10 px-2 py-1 text-xs text-hackerzart-secondary">
+                    Hacker
+                  </span>
+                </div>
+                <div className="mt-3 h-2 w-full rounded-full bg-white/10">
+                  <div 
+                    className="h-2 rounded-full bg-hackerzart-secondary" 
+                    style={{ width: '87%' }}
+                  />
+                </div>
+                <p className="mt-2 text-xs text-white/50">
+                  87% of your generations use this style
+                </p>
+              </div>
 
-            <div className="mt-5 grid gap-3">
+              <div className="rounded-2xl border border-white/10 bg-black/30 p-4">
+                <h3 className="text-sm font-medium">Style Recommendations</h3>
+                <div className="mt-3 space-y-2">
+                  <div className="flex items-center justify-between">
+                    <span className="text-sm">Try Keygen for authenticity</span>
+                    <button className="rounded-full bg-hackerzart-accent/10 px-2 py-1 text-xs text-hackerzart-accent">
+                      Explore
+                    </button>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <span className="text-sm">Experiment with Gothic</span>
+                    <button className="rounded-full bg-hackerzart-accent/10 px-2 py-1 text-xs text-hackerzart-accent">
+                      Explore
+                    </button>
+                  </div>
+                </div>
+              </div>
+
               <a
                 href="/dashboard/styles"
-                className="rounded-2xl border border-white/10 bg-black/30 px-4 py-3 text-sm text-white/75 transition hover:bg-black/40"
+                className="flex w-full items-center justify-between rounded-2xl border border-white/10 bg-black/30 px-4 py-3 text-sm text-white/75 transition hover:bg-black/40"
               >
-                Explore style presets
-              </a>
-              <a
-                href="/dashboard/account"
-                className="rounded-2xl border border-white/10 bg-black/30 px-4 py-3 text-sm text-white/75 transition hover:bg-black/40"
-              >
-                Open account settings
+                <span>View all style presets</span>
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-hackerzart-secondary">
+                  <path d="M1 6H11M11 6L6 1M11 6L6 11" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
               </a>
             </div>
           </article>
