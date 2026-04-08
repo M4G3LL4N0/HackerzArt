@@ -2525,3 +2525,1077 @@
 
 # 2026-04-06 17:56:08.845759
 +/exit
+
+# 2026-04-06 17:57:08.287628
++y
+
+# 2026-04-06 17:57:11.323756
++OBJECTIVE
++
++Do a focused production-stabilization pass for HackerzArt using only the files already in chat.
++
++STRATEGIC INTENT
++
++We already diagnosed the repo-map problem: git was tracking node_modules/build artifacts, which polluted Aider. That has been cleaned. Now focus only on the real app and make it production-ready.
++
++FILES TO MODIFY
++
++Only the files already in this chat.
++
++AIDER PROMPT
++
++1. Make npm run build pass cleanly.
++2. Keep the premium HackerzArt aesthetic: dark, monochrome, hacker/keygen/gothic/baroque/terminal.
++3. Do not expand scope beyond these files.
++4. Do not reintroduce any dependency on tracked node_modules or deleted artifacts.
++5. Ensure middleware is Edge-safe.
++6. Ensure Supabase code is compile-safe and uses @supabase/ssr patterns correctly.
++7. Keep layout, marketing pages, dashboard pages, and API routes coherent and production-ready.
++8. Fix any remaining Tailwind/config/type issues.
++9. Preserve Noaerth positioning subtly.
++10. Optimize for immediate Vercel deployment readiness.
++
++VALIDATION
++
++After changes, the repo should pass:
++- npm install
++- npm run build
++
++BLITZSCALE NEXT MOVES
++
++After build passes, we will deploy with:
++- vercel --prod
++- then attach/verify hackerzart.noaerth.com
+
+# 2026-04-06 17:59:51.355735
++y
+
+# 2026-04-06 17:59:51.367173
++/run npm install
+
+# 2026-04-06 17:59:51.367337
++/run npm install
+
+# 2026-04-06 17:59:54.180176
++/run npm run build
+
+# 2026-04-06 17:59:54.180314
++/run npm run build
+
+# 2026-04-06 18:00:02.127871
++y
+
+# 2026-04-06 18:00:08.928147
++/exit
+
+# 2026-04-06 19:32:48.314910
++OBJECTIVE
++
++Redesign HackerzArt into a premium, visually distinctive, production-quality startup website.
++
++The site is live and working, but the current design is too plain and not yet aligned with the actual HackerzArt brand.
++
++We need to transform it into a high-end, colorful, premium cyber-art product website inspired by:
++
++1. 90s and 2000s hacker / keygen / warez intro aesthetics
++2. ASCII art and terminal signal systems
++3. the uploaded ornate monochrome black-and-white reference image
++4. the uploaded premium Noaerth website screenshots:
++   - strong large hero typography
++   - dark cinematic gradients
++   - polished card grids
++   - premium startup hierarchy
++   - colorful but controlled visual system
++   - modern venture-backed polish
++
++The result should feel like:
++“luxury cyberpunk creative tooling”
++“ASCII x premium startup”
++“Apple-level polish meets underground hacker art direction”
++
++CRITICAL DESIGN INTENT
++
++Do NOT make this look:
++- generic SaaS
++- cartoonish cyberpunk
++- amateur neon hacker UI
++- gamified dashboard junk
++- cheap glassmorphism
++- random gradients with no system
++
++Instead make it feel:
++- premium
++- dramatic
++- artistic
++- technical
++- mysterious
++- colorful but restrained
++- brand-defining
++- visually memorable
++- investor-ready
++
++VISUAL SYSTEM
++
++Use a premium dark base with elevated color accents inspired by the screenshots:
++- deep navy / black backgrounds
++- subtle indigo / cobalt / violet atmospheric gradients
++- controlled orange / coral / magenta highlights
++- occasional cyan / electric blue signal accents
++- elegant borders
++- premium shadows / glow
++- strong contrast
++- sophisticated layering
++
++Blend this with HackerzArt aesthetics:
++- terminal framing
++- ASCII previews
++- ornate linework inspiration
++- engraved/cyber-baroque mood
++- signal density
++- scanline/grid/code feeling
++- monochrome structure with selective color drama
++
++HOMEPAGE TRANSFORMATION
++
++Completely redesign app/page.tsx and supporting components into a premium marketing homepage with sections like:
++
++1. HEADER
++- polished nav
++- premium simple branding
++- clear CTA
++
++2. HERO
++- large high-impact headline
++- stronger brand story
++- beautiful color atmosphere
++- ASCII/terminal visual panel
++- richer call-to-actions
++- premium layout and spacing
++- this should become the signature visual of HackerzArt
++
++3. FEATURE / CAPABILITY SECTION
++- turn existing features into visually distinct premium cards
++- cards should feel like product modules
++- include stronger information hierarchy
++- add tasteful color variation across cards
++
++4. STYLE SYSTEM / AESTHETIC MODES
++- showcase Hacker / Keygen / Gothic / Baroque / Terminal as premium visual modes
++- this should feel like a product system, not a simple feature list
++- create visually rich cards with distinct moods
++
++5. GALLERY / OUTPUT PREVIEW
++- make this feel more like collectible digital artifacts / rendered signal pieces
++- premium grid inspired by the Noaerth portfolio cards
++- use tasteful visual variety
++
++6. HOW IT WORKS
++- premium step layout
++- clear but elegant
++
++7. COMPANY / PLATFORM VISION
++- explain that this starts as a generator and expands into aesthetic infrastructure
++- make it feel investor-legible
++
++8. FOOTER
++- refined, minimal, premium
++- subtle Noaerth company positioning
++
++COMPONENT WORK
++
++Repair or create premium versions of these if helpful:
++- Header
++- Footer
++- Hero
++- FeatureGrid
++- HowItWorks
++- AsciiPreview
++- GalleryGrid
++- PricingCards
++- InvestorNarrative
++- Button
++- Card
++
++If some of these files are currently missing or broken, create or replace them cleanly.
++
++ASCII / TERMINAL INTEGRATION
++
++The site should visibly feel like HackerzArt.
++Integrate ASCII/terminal motifs into the UI tastefully:
++- hero preview block
++- framed code/signal panels
++- subtle mono terminal text details
++- signal-style dividers or micro-labeling
++- avoid making the whole page unreadable
++
++TYPOGRAPHY + LAYOUT
++
++Improve:
++- hero scale
++- spacing rhythm
++- section padding
++- content width
++- card proportions
++- CTA hierarchy
++- overall balance
++
++Typography should feel:
++- bold
++- clean
++- premium
++- editorial
++- not noisy
++
++COLOR STRATEGY
++
++Use color with intention.
++Think:
++- monochrome structure
++- premium startup gradients
++- artistic card accents
++- portfolio-card-inspired color diversity
++
++Do not overdo it.
++
++TAILWIND / GLOBALS
++
++Update app/globals.css and tailwind config if needed to support:
++- premium background layers
++- reusable gradient utilities
++- glow treatments
++- grid textures
++- subtle noise/scanline effects
++- better typography defaults
++
++Keep everything build-safe.
++
++PAGE ALIGNMENT
++
++Also lightly upgrade these pages to match the new brand system:
++- /gallery
++- /pricing
++- /investors
++- /technology
++
++They do not need full redesign parity with the homepage, but they should visually align with the new premium aesthetic.
++
++NOAERTH POSITIONING
++
++Keep “A Noaerth company” subtle and elegant.
++Do not let it overpower HackerzArt.
++
++BUILD REQUIREMENTS
++
++- do not break build
++- keep imports clean
++- do not introduce unsupported server/client issues
++- do not add unnecessary dependencies unless truly needed
++- preserve current working routing
++- keep deployment-ready
++
++SUCCESS CRITERIA
++
++After this redesign pass, the site should:
++- still build successfully
++- feel dramatically more premium
++- clearly express the HackerzArt brand
++- visually connect the hacker ASCII concept with colorful premium startup execution
++- feel much closer to the uploaded inspirations
+
+# 2026-04-06 19:36:31.196365
++Now do a second-pass art direction refinement for HackerzArt.
++
++Goals:
++1. push the visual identity even further
++2. make the homepage feel more iconic and brand-defining
++3. improve color composition and premium gradient control
++4. make cards feel more expensive and collector-like
++5. strengthen the ASCII / terminal / signal / cyber-baroque integration
++6. improve mobile responsiveness while preserving visual drama
++7. remove any remaining generic SaaS feeling
++8. make the site feel like a category-defining creative tooling startup
++
++Do not break build.
++Do not add clutter.
++Refine with restraint and taste.
+
+# 2026-04-06 19:37:55.587064
++do them all
+
+# 2026-04-06 19:42:30.173233
++Now do a second-pass art direction refinement for HackerzArt.
++
++Goals:
++1. push the visual identity even further
++2. make the homepage feel more iconic and brand-defining
++3. improve color composition and premium gradient control
++4. make cards feel more expensive and collector-like
++5. strengthen the ASCII / terminal / signal / cyber-baroque integration
++6. improve mobile responsiveness while preserving visual drama
++7. remove any remaining generic SaaS feeling
++8. make the site feel like a category-defining creative tooling startup
++
++Do not break build.
++Do not add clutter.
++Refine with restraint and taste.
+
+# 2026-04-06 19:46:00.860188
++/exit
+
+# 2026-04-06 19:51:01.552134
++cd /Users/joshuadavis/startups/hackerzart
++
++aider --model openrouter/deepseek/deepseek-chat \
++  app/page.tsx \
++  app/layout.tsx \
++  app/globals.css \
++  components \
++  tailwind.config.ts
+
+# 2026-04-06 19:51:02.781603
++y
+
+# 2026-04-06 19:51:13.096348
++OBJECTIVE
++
++Transform HackerzArt homepage into a category-defining premium cyber-art product website.
++
++This is no longer a simple landing page.
++
++We are building:
++- a signature visual identity
++- a premium creative tool
++- a venture-scale brand
++
++STRATEGIC INTENT
++
++The site must feel like:
++- Apple-level polish
++- underground hacker culture
++- premium digital art platform
++- collectible aesthetic system
++
++It should combine:
++- ASCII / terminal / signal visuals
++- cinematic gradient environments
++- premium startup layout (like Noaerth reference)
++- artistic direction (not generic SaaS)
++
++CORE DESIGN SYSTEM
++
++1. BACKGROUND SYSTEM
++- layered gradients (navy, indigo, violet)
++- subtle glow + vignette
++- optional grain / scanline effect
++
++2. HERO (MOST IMPORTANT)
++- massive headline (2-line, bold, clean)
++- short powerful positioning line
++- dual CTA (Generate / Explore Gallery)
++- right-side or background ASCII artifact panel
++- glowing frame around ASCII block
++- subtle animation feel (not heavy)
++
++3. ASCII PANEL SYSTEM
++- create a reusable component:
++  - dark frame
++  - soft glow border
++  - mono font
++  - scroll/overflow
++- feels like terminal artifact
++
++4. CARD SYSTEM (INSPIRED BY NOAERTH)
++- rounded, layered cards
++- subtle gradient overlays
++- different color tones per category
++- glow edges
++- hover lift
++
++5. STYLE SYSTEM SECTION
++- Hacker
++- Keygen
++- Gothic
++- Baroque
++- Terminal
++
++Each card:
++- distinct visual tone
++- premium, not gimmicky
++- feels like a product mode
++
++6. GALLERY SECTION
++- grid of outputs
++- feels collectible
++- each card = artifact
++
++7. TYPOGRAPHY
++- large hero scale
++- strong spacing
++- clean sans-serif
++- mono for accents
++
++8. COLOR STRATEGY
++- mostly dark
++- accents:
++  - coral/orange (CTA)
++  - cyan/blue (tech)
++  - violet (depth)
++- controlled usage, not chaotic
++
++9. MICRO DETAILS
++- uppercase labels
++- tracking-wide text
++- subtle separators
++- terminal-like labels
++
++10. NO GENERIC SAAS
++Remove:
++- boring feature grids
++- default Tailwind look
++- flat layout
++
++Everything should feel:
++- intentional
++- designed
++- premium
++- artistic
++
++TECHNICAL RULES
++
++- do not break build
++- keep Next.js App Router valid
++- no heavy dependencies
++- Tailwind-based styling
++- components modular
++
++OUTPUT
++
++Refactor homepage and supporting components to implement this system.
++
++Create or improve:
++- Hero
++- AsciiPanel
++- FeatureCards
++- StyleSystem
++- GalleryPreview
++
++Make the homepage visually striking and memorable.
++
++SUCCESS CRITERIA
++
++- site looks dramatically better
++- feels premium
++- clearly different from generic AI tools
++- aligns with HackerzArt brand
+
+# 2026-04-06 19:53:09.647891
++y
+
+# 2026-04-06 19:54:05.631947
++/exit
+
+# 2026-04-06 20:07:22.687131
++cd /Users/joshuadavis/startups/hackerzart
++
++aider --model openrouter/deepseek/deepseek-chat \
++  app/layout.tsx \
++  app/page.tsx \
++  app/globals.css \
++  tailwind.config.ts \
++  postcss.config.js \
++  components \
++  lib/utils.ts
+
+# 2026-04-06 20:07:23.890512
++y
+
+# 2026-04-06 20:07:31.143536
++OBJECTIVE
++
++Fully restore and upgrade HackerzArt’s frontend into a premium, visually distinctive, production-quality design system.
++
++The current UI has regressed into unstyled HTML, meaning:
++- Tailwind is not properly applied
++- layout/globals may not be wired
++- components are not being used effectively
++
++We must fix the foundation AND rebuild the visual system in one pass.
++
++---
++
++PHASE 1 — FIX STYLING PIPELINE (CRITICAL)
++
++1. Ensure Tailwind is fully working:
++   - tailwind.config.ts has correct content paths:
++     ./app/**/*.{js,ts,jsx,tsx}
++     ./components/**/*.{js,ts,jsx,tsx}
++
++2. Ensure app/globals.css includes:
++   @tailwind base;
++   @tailwind components;
++   @tailwind utilities;
++
++3. Ensure layout.tsx imports globals.css correctly
++
++4. Ensure layout.tsx wraps app properly:
++   <html>
++   <body className="bg-black text-white antialiased">
++     {children}
++   </body>
++   </html>
++
++5. Fix any missing or broken PostCSS config
++
++---
++
++PHASE 2 — REBUILD DESIGN SYSTEM
++
++We are not restoring a generic site.
++
++We are building:
++👉 a premium cyber-art product
++👉 inspired by:
++   - 90s hacker / keygen aesthetics
++   - ASCII terminal visuals
++   - Noaerth premium design system
++
++---
++
++GLOBAL VISUAL SYSTEM
++
++- deep black / navy background
++- layered gradient lighting
++- subtle glow effects
++- premium spacing
++- rounded cards
++- strong typography
++- mono accents for ASCII
++- clean modern sans for main UI
++
++---
++
++PHASE 3 — HOMEPAGE REDESIGN
++
++Rebuild app/page.tsx into structured sections:
++
++1. HEADER
++- clean nav
++- spaced
++- subtle hover states
++- premium feel
++
++2. HERO (MOST IMPORTANT)
++
++LEFT:
++- big headline:
++  "Turn signal into identity."
++- subtext:
++  "The premium engine for machine-rendered monochrome systems."
++
++RIGHT:
++- ASCII panel (styled)
++- glowing border
++- dark panel background
++- overflow hidden
++
++CTA:
++- primary: Start Creating
++- secondary: Explore Gallery
++
++---
++
++3. ASCII PANEL COMPONENT
++
++Create reusable component:
++- rounded-xl
++- border-white/10
++- bg-black/60
++- backdrop-blur
++- mono font
++- small text
++- scrollable
++- glowing effect
++
++---
++
++4. FEATURE CARDS
++
++Replace plain sections with premium cards:
++- gradient overlays
++- hover lift
++- rounded-xl
++- border + glow
++- consistent spacing
++
++---
++
++5. STYLE SYSTEM
++
++Create section:
++- Hacker
++- Keygen
++- Gothic
++- Baroque
++- Terminal
++
++Each card:
++- slightly different color tone
++- premium feel
++- NOT neon spam
++
++---
++
++6. FOOTER
++
++- minimal
++- clean
++- subtle Noaerth reference
++
++---
++
++PHASE 4 — COMPONENTIZATION
++
++Create or refactor:
++
++components/ui/Button.tsx
++components/ui/Card.tsx
++components/AsciiPanel.tsx
++components/Hero.tsx
++components/Header.tsx
++
++---
++
++PHASE 5 — QUALITY BAR
++
++The site should feel:
++- NOT generic SaaS
++- NOT Tailwind template
++- premium
++- intentional
++- clean
++- visually distinct
++- investor-ready
++
++---
++
++TECH RULES
++
++- do not break build
++- keep Next.js App Router valid
++- do not add heavy deps
++- keep everything Tailwind-based
++- ensure no unused imports
++- ensure all components are valid modules
++
++---
++
++SUCCESS CRITERIA
++
++After this pass:
++- Tailwind works
++- layout is styled
++- homepage looks dramatically better
++- ASCII panel looks like a product artifact
++- UI feels premium and modern
++- no raw HTML fallback remains
+
+# 2026-04-06 20:07:32.329073
++y
+
+# 2026-04-06 20:08:28.774746
++OBJECTIVE
++
++Fully restore and upgrade HackerzArt’s frontend into a premium, visually distinctive, production-quality design system.
++
++The current UI has regressed into unstyled HTML, meaning:
++- Tailwind is not properly applied
++- layout/globals may not be wired
++- components are not being used effectively
++
++We must fix the foundation AND rebuild the visual system in one pass.
++
++---
++
++PHASE 1 — FIX STYLING PIPELINE (CRITICAL)
++
++1. Ensure Tailwind is fully working:
++   - tailwind.config.ts has correct content paths:
++     ./app/**/*.{js,ts,jsx,tsx}
++     ./components/**/*.{js,ts,jsx,tsx}
++
++2. Ensure app/globals.css includes:
++   @tailwind base;
++   @tailwind components;
++   @tailwind utilities;
++
++3. Ensure layout.tsx imports globals.css correctly
++
++4. Ensure layout.tsx wraps app properly:
++   <html>
++   <body className="bg-black text-white antialiased">
++     {children}
++   </body>
++   </html>
++
++5. Fix any missing or broken PostCSS config
++
++---
++
++PHASE 2 — REBUILD DESIGN SYSTEM
++
++We are not restoring a generic site.
++
++We are building:
++👉 a premium cyber-art product
++👉 inspired by:
++   - 90s hacker / keygen aesthetics
++   - ASCII terminal visuals
++   - Noaerth premium design system
++
++---
++
++GLOBAL VISUAL SYSTEM
++
++- deep black / navy background
++- layered gradient lighting
++- subtle glow effects
++- premium spacing
++- rounded cards
++- strong typography
++- mono accents for ASCII
++- clean modern sans for main UI
++
++---
++
++PHASE 3 — HOMEPAGE REDESIGN
++
++Rebuild app/page.tsx into structured sections:
++
++1. HEADER
++- clean nav
++- spaced
++- subtle hover states
++- premium feel
++
++2. HERO (MOST IMPORTANT)
++
++LEFT:
++- big headline:
++  "Turn signal into identity."
++- subtext:
++  "The premium engine for machine-rendered monochrome systems."
++
++RIGHT:
++- ASCII panel (styled)
++- glowing border
++- dark panel background
++- overflow hidden
++
++CTA:
++- primary: Start Creating
++- secondary: Explore Gallery
++
++---
++
++3. ASCII PANEL COMPONENT
++
++Create reusable component:
++- rounded-xl
++- border-white/10
++- bg-black/60
++- backdrop-blur
++- mono font
++- small text
++- scrollable
++- glowing effect
++
++---
++
++4. FEATURE CARDS
++
++Replace plain sections with premium cards:
++- gradient overlays
++- hover lift
++- rounded-xl
++- border + glow
++- consistent spacing
++
++---
++
++5. STYLE SYSTEM
++
++Create section:
++- Hacker
++- Keygen
++- Gothic
++- Baroque
++- Terminal
++
++Each card:
++- slightly different color tone
++- premium feel
++- NOT neon spam
++
++---
++
++6. FOOTER
++
++- minimal
++- clean
++- subtle Noaerth reference
++
++---
++
++PHASE 4 — COMPONENTIZATION
++
++Create or refactor:
++
++components/ui/Button.tsx
++components/ui/Card.tsx
++components/AsciiPanel.tsx
++components/Hero.tsx
++components/Header.tsx
++
++---
++
++PHASE 5 — QUALITY BAR
++
++The site should feel:
++- NOT generic SaaS
++- NOT Tailwind template
++- premium
++- intentional
++- clean
++- visually distinct
++- investor-ready
++
++---
++
++TECH RULES
++
++- do not break build
++- keep Next.js App Router valid
++- do not add heavy deps
++- keep everything Tailwind-based
++- ensure no unused imports
++- ensure all components are valid modules
++
++---
++
++SUCCESS CRITERIA
++
++After this pass:
++- Tailwind works
++- layout is styled
++- homepage looks dramatically better
++- ASCII panel looks like a product artifact
++- UI feels premium and modern
++- no raw HTML fallback remains
+
+# 2026-04-06 20:10:10.003925
++y
+
+# 2026-04-06 20:14:06.371086
++/exit
+
+# 2026-04-06 20:16:58.256028
++cd /Users/joshuadavis/startups/hackerzart
++
++aider --model openrouter/deepseek/deepseek-chat \
++  app/page.tsx \
++  app/globals.css \
++  components \
++  tailwind.config.ts
+
+# 2026-04-06 20:16:59.433177
++y
+
+# 2026-04-06 20:17:09.104811
++OBJECTIVE
++
++Push HackerzArt from “clean startup UI” to “iconic, category-defining visual product.”
++
++We already have a solid layout.
++
++Now we are adding:
++- depth
++- atmosphere
++- identity
++- visual tension
++- product realism
++
++---
++
++PHASE 1 — HERO UPGRADE
++
++Enhance hero section:
++
++1. Add background system:
++   - radial gradient (center glow)
++   - deep navy / violet tones
++   - subtle vignette
++
++2. Add grain overlay:
++   - very subtle noise texture
++
++3. Improve headline:
++   - gradient text (subtle, not flashy)
++   - tighter spacing
++   - more dramatic scale
++
++---
++
++PHASE 2 — ASCII PANEL UPGRADE
++
++Transform ASCII panel into a premium artifact:
++
++1. Add:
++   - glow border
++   - inner shadow
++   - scanline overlay
++   - grid overlay (already exists → refine)
++
++2. Improve ASCII:
++   - more complex structure
++   - feels like “signal rendering”
++   - not a simple icon
++
++3. Add subtle animation:
++   - very slow opacity flicker
++   - or gradient shimmer
++
++---
++
++PHASE 3 — STYLE CARDS → PRODUCT SYSTEM
++
++Each card should feel like a real mode.
++
++Add inside each card:
++- small ASCII preview
++- label
++- short description
++
++Add visual identity:
++
++Hacker → green/cyan tint
++Keygen → magenta/orange
++Gothic → deep red/purple
++Baroque → gold/warm tones
++Terminal → blue/cyan minimal
++
++Add hover:
++- lift
++- glow intensifies
++- border highlight
++
++---
++
++PHASE 4 — BACKGROUND SYSTEM
++
++Improve entire page background:
++
++- layered gradients
++- subtle grid fade behind sections
++- dark but not flat
++- premium depth
++
++---
++
++PHASE 5 — MICRO DETAILS
++
++Add:
++- uppercase micro labels
++- tracking-wide text
++- subtle separators
++- terminal-style small UI elements
++
++---
++
++DESIGN RULES
++
++- no neon spam
++- no generic SaaS patterns
++- everything must feel intentional
++- color must be controlled
++- contrast must be strong
++- spacing must be premium
++
++---
++
++SUCCESS CRITERIA
++
++After this pass:
++- hero feels cinematic
++- ASCII panel feels like a real product
++- cards feel alive and distinct
++- background has depth
++- site feels like a new category, not a clone
+
+# 2026-04-07 11:09:21.294932
++do them all
+
+# 2026-04-07 11:27:29.599007
++yes do all changes
+
+# 2026-04-07 11:28:48.297436
++yes
+
+# 2026-04-07 11:29:47.179230
++yes, do all changes, don't ask for confirmation, just do all changes you recommend automatically
+
+# 2026-04-07 11:30:57.143620
++yes do all changes
+
+# 2026-04-07 11:33:12.109616
++do all changes
+
+# 2026-04-07 11:34:48.425211
++yes do all changes
+
+# 2026-04-07 11:35:37.407934
++yes do all recommendations
+
+# 2026-04-07 11:42:33.216698
++yes do all the changes
+
+# 2026-04-07 11:43:57.958812
++yes do all the changes and recommendations
+
+# 2026-04-07 11:46:45.438348
++/exit
+
+# 2026-04-07 20:45:54.363907
++SYSTEM MODE: FAST MICRO TASK
++
++Venture: hackerzart
++Phase: fix_build
++
++Rules:
++- do ONLY one small improvement
++- do NOT refactor entire files
++- do NOT change many files
++- keep changes minimal
++- keep build working
++- no explanations
++- no questions
++
++Goal:
++- make one visible improvement quickly
+
+# 2026-04-07 20:45:54.364309
++SYSTEM MODE: FAST MICRO TASK
++
++Venture: hackerzart
++Phase: fix_build
++
++Rules:
++- do ONLY one small improvement
++- do NOT refactor entire files
++- do NOT change many files
++- keep changes minimal
++- keep build working
++- no explanations
++- no questions
++
++Goal:
++- make one visible improvement quickly

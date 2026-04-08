@@ -25,3 +25,6 @@ pnpm-debug.log*
 
 # aider
 .aider.tags.cache.v4/
+.aider*
+.vercel
+.env*.local
