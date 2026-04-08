@@ -44,8 +44,13 @@ export default function Home() {
               </p>
               <div className="flex flex-col gap-4">
                 <div className="flex gap-4">
-                  <Button className="animate-pulse hover:shadow-glow relative overflow-hidden">
-                    <span className="relative z-10">Start Creating</span>
+                  <Button 
+                    className="animate-pulse hover:shadow-glow relative overflow-hidden"
+                    onClick={() => window.location.href = '/dashboard/generate'}
+                  >
+                    <span className="relative z-10">
+                      Generate First Signal (Free)
+                    </span>
                     <div className="absolute inset-0 bg-hackerzart-accent/10 animate-hover-glow pointer-events-none" />
                   </Button>
                   <Button 

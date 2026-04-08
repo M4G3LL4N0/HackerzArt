@@ -80,7 +80,8 @@ body {
   }
 
   .style-card-hover {
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.3s ease;
+    will-change: transform;
   }
   .style-card-hover:hover {
     transform: translateY(-4px);

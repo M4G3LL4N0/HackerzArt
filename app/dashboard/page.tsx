@@ -1,8 +1,28 @@
 const stats = [
-  { label: 'Generations', value: '128', detail: 'All-time signal renders' },
-  { label: 'Public Pieces', value: '19', detail: 'Gallery-ready outputs' },
-  { label: 'Active Style', value: 'Hacker', detail: 'Default workspace preset' },
-  { label: 'Style Usage', value: '87%', detail: 'Hacker style dominance' },
+  { 
+    label: 'Generations', 
+    value: '128', 
+    detail: 'All-time signal renders',
+    trend: '+42% this month' 
+  },
+  { 
+    label: 'Public Pieces', 
+    value: '19', 
+    detail: 'In community gallery',
+    highlight: '3 trending' 
+  },
+  { 
+    label: 'Active Style', 
+    value: 'Hacker', 
+    detail: 'Your signature look',
+    meta: 'Competitive edge' 
+  },
+  { 
+    label: 'Efficiency', 
+    value: '87%', 
+    detail: 'Style mastery',
+    progress: true 
+  },
 ]
 
 const recentGenerations = [
