@@ -172,6 +172,14 @@ body {
     opacity: 0.03;
   }
   
+  @keyframes progress {
+    from { width: 0 }
+    to { width: 100% }
+  }
+  .animate-progress {
+    animation: progress 2s linear infinite;
+  }
+  
   .text-gradient {
     background: linear-gradient(
       to right,

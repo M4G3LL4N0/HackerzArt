@@ -99,9 +99,24 @@ export default function DashboardPage() {
                     <span className="rounded-full border border-white/10 px-3 py-1 text-xs text-white/55">
                       {item.style}
                     </span>
-                    <span className="rounded-full border border-white/10 px-3 py-1 text-xs text-white/55">
-                      {item.status}
-                    </span>
+                    <div className="relative">
+                      <span className="rounded-full border border-white/10 px-3 py-1 text-xs text-white/55">
+                        {item.status}
+                      </span>
+                      {item.status === 'Rendering' && (
+                        <div className="absolute inset-0 rounded-full border border-white/10">
+                          <div 
+                            className="h-full rounded-full bg-hackerzart-secondary/20 animate-progress"
+                            style={{
+                              width: '50%',
+                              animationDuration: '2s',
+                              animationTimingFunction: 'linear',
+                              animationIterationCount: 'infinite'
+                            }}
+                          />
+                        </div>
+                      )}
+                    </div>
                   </div>
                   <p className="mt-3 text-sm text-white/45">{item.time}</p>
                 </div>
