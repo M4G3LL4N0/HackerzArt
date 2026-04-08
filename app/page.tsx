@@ -1,4 +1,5 @@
 import { Button } from '@/components/ui/Button'
+import Link from 'next/link'
 import { Header } from '@/components/Header'
 import { AsciiPanel } from '@/components/AsciiPanel'
 import { renderAscii } from '@/lib/ascii/renderer'
@@ -46,19 +47,24 @@ export default function Home() {
                 <div className="flex gap-4">
                   <Button 
                     className="animate-pulse hover:shadow-glow relative overflow-hidden"
-                    onClick={() => window.location.href = '/dashboard/generate'}
+                    asChild
                   >
-                    <span className="relative z-10">
-                      Generate First Signal (Free)
-                    </span>
-                    <div className="absolute inset-0 bg-hackerzart-accent/10 animate-hover-glow pointer-events-none" />
+                    <Link href="/dashboard/generate">
+                      <span className="relative z-10">
+                        Generate First Signal (Free)
+                      </span>
+                      <div className="absolute inset-0 bg-hackerzart-accent/10 animate-hover-glow pointer-events-none" />
+                    </Link>
                   </Button>
                   <Button 
                     variant="secondary" 
                     className="hover:shadow-glow-secondary relative overflow-hidden"
+                    asChild
                   >
-                    <span className="relative z-10">Explore Gallery</span>
-                    <div className="absolute inset-0 bg-hackerzart-secondary/10 animate-hover-glow pointer-events-none" />
+                    <Link href="/gallery">
+                      <span className="relative z-10">Explore Gallery</span>
+                      <div className="absolute inset-0 bg-hackerzart-secondary/10 animate-hover-glow pointer-events-none" />
+                    </Link>
                   </Button>
                 </div>
                 <div className="relative group">
