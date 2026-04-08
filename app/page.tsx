@@ -94,7 +94,7 @@ export default function Home() {
               ].map((style) => (
                 <div 
                   key={style.slug}
-                  className={`group relative aspect-square overflow-hidden rounded-xl border border-hackerzart-border/20 bg-hackerzart-surface/50 p-6 transition-all hover:border-hackerzart-styles-${style.slug}/50 hover:shadow-glow hover:shadow-hackerzart-styles-${style.slug}/20 style-card-hover animate-pulse`}
+                  className="group relative aspect-square overflow-hidden rounded-xl border border-hackerzart-border/20 bg-hackerzart-surface/50 p-6 transition-all hover:border-hackerzart-accent/50 hover:shadow-glow hover:shadow-hackerzart-accent/20 style-card-hover animate-pulse"
                   style={{
                     animationDuration: `${Math.random() * 2 + 2}s`,
                     animationDelay: `${Math.random() * 2}s`

@@ -124,8 +124,14 @@ export default function GeneratePage() {
                 />
               </div>
 
-              <button className="inline-flex min-h-12 items-center justify-center rounded-2xl border border-white/15 bg-white px-5 py-3 text-sm font-medium text-black transition hover:opacity-90">
+              <button 
+                className="inline-flex min-h-12 items-center justify-center rounded-2xl border border-white/15 bg-white px-5 py-3 text-sm font-medium text-black transition hover:opacity-90 disabled:opacity-70 disabled:cursor-not-allowed"
+                disabled={false} // TODO: Connect to actual loading state
+              >
                 Generate Artwork
+                {false && ( // TODO: Connect to actual loading state
+                  <span className="ml-2 inline-block h-4 w-4 animate-spin rounded-full border-2 border-black border-t-transparent" />
+                )}
               </button>
             </div>
           </section>

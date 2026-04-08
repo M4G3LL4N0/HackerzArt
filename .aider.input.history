@@ -3599,3 +3599,33 @@
 +
 +Goal:
 +- make one visible improvement quickly
+
+# 2026-04-07 20:54:16.482145
++Fix or improve this project.
++
++Focus ONLY on:
++- fixing errors
++- improving UI slightly
++- small high-impact changes
++
++DO NOT:
++- rewrite large files
++- add new systems
++- over-engineer
++
++Make minimal edits only.
+
+# 2026-04-07 20:54:16.483411
++Fix or improve this project.
++
++Focus ONLY on:
++- fixing errors
++- improving UI slightly
++- small high-impact changes
++
++DO NOT:
++- rewrite large files
++- add new systems
++- over-engineer
++
++Make minimal edits only.

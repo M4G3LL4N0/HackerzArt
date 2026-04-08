@@ -27,6 +27,8 @@ export default function SignupPage() {
                   id="name"
                   type="text"
                   placeholder="Your name"
+                  required
+                  minLength={2}
                   className="w-full rounded-2xl border border-white/10 bg-black/40 px-4 py-3 text-sm text-white outline-none placeholder:text-white/25"
                 />
               </div>
