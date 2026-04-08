@@ -28,3 +28,6 @@ pnpm-debug.log*
 .aider*
 .vercel
 .env*.local
+coverage/
+*.log
+.DS_Store
