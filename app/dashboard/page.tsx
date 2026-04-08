@@ -74,19 +74,36 @@ export default function DashboardPage() {
           </div>
         </section>
 
-        <section className="grid gap-4 md:grid-cols-3">
+        <section className="grid gap-4 md:grid-cols-4">
           {stats.map((stat) => (
             <article
               key={stat.label}
-              className="rounded-3xl border border-white/10 bg-white/[0.03] p-6 backdrop-blur-sm"
+              className="group rounded-3xl border border-white/10 bg-white/[0.03] p-6 backdrop-blur-sm transition-all hover:bg-hackerzart-surface/30 hover:border-hackerzart-secondary/20"
             >
-              <p className="text-xs uppercase tracking-[0.22em] text-white/40">
-                {stat.label}
-              </p>
-              <h2 className="mt-3 text-3xl font-semibold tracking-tight">
-                {stat.value}
-              </h2>
-              <p className="mt-2 text-sm text-white/60">{stat.detail}</p>
+              <div className="flex justify-between items-start">
+                <div>
+                  <p className="text-xs uppercase tracking-[0.22em] text-white/40">
+                    {stat.label}
+                  </p>
+                  <h2 className="mt-3 text-3xl font-semibold tracking-tight">
+                    {stat.value}
+                  </h2>
+                  <p className="mt-2 text-sm text-white/60">{stat.detail}</p>
+                </div>
+                {stat.trend && (
+                  <span className="text-xs text-hackerzart-secondary">
+                    {stat.trend}
+                  </span>
+                )}
+              </div>
+              {stat.progress && (
+                <div className="mt-4 h-1 w-full rounded-full bg-white/10">
+                  <div 
+                    className="h-1 rounded-full bg-hackerzart-secondary" 
+                    style={{ width: stat.value }}
+                  />
+                </div>
+              )}
             </article>
           ))}
         </section>
