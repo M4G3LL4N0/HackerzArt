@@ -12,7 +12,6 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 const Button = forwardRef<HTMLButtonElement, ButtonProps>(
   ({ className, variant = 'primary', size = 'md', asChild = false, ...props }, ref) => {
     const Comp = asChild ? 'div' : 'button'
-  return (
     return (
       <Comp
         className={cn(
