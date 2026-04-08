@@ -3629,3 +3629,23 @@
 +- over-engineer
 +
 +Make minimal edits only.
+
+# 2026-04-07 21:40:18.031060
++Add one small high-impact product improvement only.
++
++Rules:
++- minimal edits only
++- one focused improvement
++- no broad rewrites
++- keep build stability
++- preserve current structure
+
+# 2026-04-07 21:40:18.031367
++Add one small high-impact product improvement only.
++
++Rules:
++- minimal edits only
++- one focused improvement
++- no broad rewrites
++- keep build stability
++- preserve current structure
