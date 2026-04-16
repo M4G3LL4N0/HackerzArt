@@ -47,14 +47,8 @@ export default function Home() {
               <div className="flex flex-col gap-4">
                 <div className="flex gap-4">
                   <Button 
-                    className={cn(
-                      "animate-pulse hover:shadow-glow relative overflow-hidden",
-                      !asChild && [
-                        variant === 'primary' && 'bg-hackerzart-accent text-white hover:bg-hackerzart-accent/90',
-                        variant === 'secondary' && 'bg-hackerzart-secondary text-white hover:bg-hackerzart-secondary/90',
-                        variant === 'ghost' && 'hover:bg-hackerzart-surface/50'
-                      ].filter(Boolean).join(' ')
-                    )}
+                    variant="primary"
+                    className="animate-pulse hover:shadow-glow relative overflow-hidden"
                     asChild
                   >
                     <Link href="/dashboard/generate">
@@ -65,15 +59,8 @@ export default function Home() {
                     </Link>
                   </Button>
                   <Button 
-                    variant="secondary" 
-                    className={cn(
-                      "hover:shadow-glow-secondary relative overflow-hidden",
-                      !asChild && [
-                        variant === 'primary' && 'bg-hackerzart-accent text-white hover:bg-hackerzart-accent/90',
-                        variant === 'secondary' && 'bg-hackerzart-secondary text-white hover:bg-hackerzart-secondary/90',
-                        variant === 'ghost' && 'hover:bg-hackerzart-surface/50'
-                      ].filter(Boolean).join(' ')
-                    )}
+                    variant="secondary"
+                    className="hover:shadow-glow-secondary relative overflow-hidden"
                     asChild
                   >
                     <Link href="/gallery">
