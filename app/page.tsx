@@ -1,9 +1,7 @@
-import { Button } from '@/components/ui/Button'
 import Link from 'next/link'
 import { Header } from '@/components/Header'
 import { AsciiPanel } from '@/components/AsciiPanel'
 import { renderAscii } from '@/lib/ascii/renderer'
-import { cn } from '@/lib/utils'
 
 const sampleAsciiArt = `
   ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣤⣶⣶⣶⣶⣶⣤⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
@@ -12,7 +10,7 @@ const sampleAsciiArt = `
   ⠀⠀⠀⠀⠀⠀⢠⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡄⠀⠀⠀⠀⠀
   ⠀⠀⠀⠀⠀⢀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠀⠀⠀⠀⠀
   ⠀⠀⠀⠀⠀⣼⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣧⠀⠀⠀⠀
-  ⠀⠀⠀⠀⣸⣿⣿⣿⣿⣿⣿⣿⠿⠿⠿⠿⠿⠿⠿⠿⣿⣿⣿⣿⣿⣿⣿⣿⣇⠀⠀⠀
+  ⠀⠀⠀⠀⣸⣿⣿⣿⣿⣿⣿⣿⣿⠿⠿⠿⠿⠿⠿⠿⠿⣿⣿⣿⣿⣿⣿⣿⣿⣇⠀⠀⠀
   ⠀⠀⠀⠀⣿⣿⣿⣿⣿⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⣿⣿⣿⣿⣿⣿⣿⠀⠀⠀
   ⠀⠀⠀⠀⣿⣿⣿⣿⣿⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⣿⣿⣿⣿⣿⣿⣿⠀⠀⠀
   ⠀⠀⠀⠀⠹⣿⣿⣿⣿⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⣿⣿⣿⣿⣿⣿⠏⠀⠀⠀
@@ -20,6 +18,14 @@ const sampleAsciiArt = `
   ⠀⠀⠀⠀⠀⠀⠀⠙⠻⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⣿⡿⠛⠉⠀⠀⠀⠀⠀⠀
   ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠉⠀⠀⠀⠀⠀⠀⠀⠀⠉⠉⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀
 `
+
+const styles = [
+  { name: 'Hacker', slug: 'hacker', desc: 'Cyberpunk signal processing' },
+  { name: 'Keygen', slug: 'keygen', desc: 'Digital authenticity markers' },
+  { name: 'Gothic', slug: 'gothic', desc: 'Ornate architectural forms' },
+  { name: 'Baroque', slug: 'baroque', desc: 'Classical decorative systems' },
+  { name: 'Terminal', slug: 'terminal', desc: 'Minimal machine interface' },
+]
 
 export default function Home() {
   return (
@@ -32,6 +38,9 @@ export default function Home() {
         <div className="mx-auto flex w-full max-w-7xl flex-col gap-16">
           <section className="grid gap-16 md:grid-cols-2">
             <div className="flex flex-col justify-center gap-6">
+              <p className="font-mono text-xs uppercase tracking-[0.28em] text-hackerzart-secondary/80">
+                ASCII identity studio
+              </p>
               <h1 className="text-5xl font-bold tracking-tighter md:text-7xl">
                 <span className="text-gradient bg-clip-text text-transparent">
                   Turn signal
@@ -42,92 +51,75 @@ export default function Home() {
                 </span>
               </h1>
               <p className="text-xl text-hackerzart-muted">
-                The premium engine for machine-rendered monochrome systems.
+                The engine for machine-rendered monochrome crests. You type a prompt,
+                pick a style grammar, and keep the still. This is a studio — not a
+                live user count.
               </p>
               <div className="flex flex-col gap-4">
-                <div className="flex gap-4">
-                  <Button 
-                    variant="primary"
-                    className="animate-pulse hover:shadow-glow relative overflow-hidden"
-                    asChild
+                <div className="flex flex-wrap gap-4">
+                  <Link
+                    href="/dashboard/generate"
+                    className="inline-flex items-center justify-center rounded-lg bg-hackerzart-accent px-6 py-3 text-base font-medium text-white transition hover:bg-hackerzart-accent/90 hover:shadow-glow"
                   >
-                    <Link href="/dashboard/generate">
-                      <span className="relative z-10">
-                        Generate First Signal (Free)
-                      </span>
-                      <div className="absolute inset-0 bg-hackerzart-accent/10 animate-hover-glow pointer-events-none" />
-                    </Link>
-                  </Button>
-                  <Button 
-                    variant="secondary"
-                    className="hover:shadow-glow-secondary relative overflow-hidden"
-                    asChild
+                    Generate First Signal
+                  </Link>
+                  <Link
+                    href="/gallery"
+                    className="inline-flex items-center justify-center rounded-lg border border-hackerzart-border bg-hackerzart-surface px-6 py-3 text-base font-medium text-white transition hover:bg-hackerzart-surface/80 hover:shadow-glow-secondary"
                   >
-                    <Link href="/gallery">
-                      <span className="relative z-10">Explore Gallery</span>
-                      <div className="absolute inset-0 bg-hackerzart-secondary/10 animate-hover-glow pointer-events-none" />
-                    </Link>
-                  </Button>
+                    Explore Gallery
+                  </Link>
                 </div>
-                <div className="relative group">
-                  <input 
-                    type="text" 
-                    placeholder="Enter command..." 
-                    className="terminal-input w-full bg-transparent border-b border-hackerzart-border/50 py-2 pl-2 pr-8 font-mono text-xs tracking-tight focus:border-hackerzart-secondary focus:ring-0 transition-colors placeholder:text-hackerzart-muted/50"
-                  />
-                  <span className="absolute right-2 top-1/2 -translate-y-1/2 text-hackerzart-secondary animate-caret-blink group-hover:text-hackerzart-accent transition-colors">_</span>
-                  <div className="absolute bottom-0 left-0 h-px w-0 group-hover:w-full bg-hackerzart-secondary transition-all duration-300" />
-                  <div className="absolute bottom-0 left-0 h-px w-full opacity-10 bg-hackerzart-secondary" />
-                </div>
+                <p className="font-mono text-xs text-hackerzart-muted/80">
+                  $ render --style keygen --keep-still · paid model APIs are not required to browse
+                </p>
               </div>
             </div>
-            <div className="relative animate-float hover:animate-none hover:scale-[1.02] transition-transform will-change-transform" style={{animationDelay: '1s', animationDuration: '8s'}}>
+            <div className="relative" style={{animationDuration: '8s'}}>
               <div className="absolute inset-0 bg-gradient-to-b from-black/50 to-transparent pointer-events-none" />
-              <AsciiPanel 
-                code={sampleAsciiArt} 
-                className="ascii-panel border-hackerzart-border/50 shadow-ascii-glow hover:shadow-ascii-glow/50 transition-all" 
+              <AsciiPanel
+                code={sampleAsciiArt}
+                className="ascii-panel border-hackerzart-border/50 shadow-ascii-glow hover:shadow-ascii-glow/50 transition-all"
               />
-              <div className="absolute inset-0 bg-scanlines pointer-events-none" />
-              <div className="absolute inset-0 bg-grid pointer-events-none" />
-              <div className="absolute -bottom-4 left-0 right-0 h-4 bg-gradient-to-t from-black/80 to-transparent pointer-events-none" />
+              <p className="mt-3 font-mono text-[11px] uppercase tracking-[0.2em] text-hackerzart-muted">
+                Labeled sample crest
+              </p>
             </div>
           </section>
 
           <section className="space-y-6">
             <div className="micro-border pb-6">
-              <p className="micro-label">HackerzArt / Live Rendering</p>
-              <h2 className="text-3xl font-semibold tracking-tight mt-2">Real-time ASCII Art Preview</h2>
+              <p className="micro-label">HackerzArt / Sample frames</p>
+              <h2 className="text-3xl font-semibold tracking-tight mt-2">ASCII art preview</h2>
+              <p className="mt-2 max-w-2xl text-sm text-hackerzart-muted">
+                These panels are static renderer samples for two prompts. They are not
+                a live feed of customer generations.
+              </p>
             </div>
             <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
               <div className="relative rounded-xl border border-hackerzart-border/20 p-6">
-                <div className="absolute inset-0 bg-gradient-to-b from-black/50 to-transparent pointer-events-none" />
-                <AsciiPanel 
+                <AsciiPanel
                   code={renderAscii({
                     prompt: 'Cyberpunk cityscape',
                     width: 60,
                     density: 'medium',
                     contrast: 'high'
                   })}
-                  className="ascii-panel border-hackerzart-border/50 shadow-ascii-glow hover:shadow-ascii-glow/50 transition-all" 
+                  className="ascii-panel border-hackerzart-border/50 shadow-ascii-glow hover:shadow-ascii-glow/50 transition-all"
                 />
-                <div className="absolute inset-0 bg-scanlines pointer-events-none" />
-                <div className="absolute inset-0 bg-grid pointer-events-none" />
-                <div className="absolute -bottom-4 left-0 right-0 h-4 bg-gradient-to-t from-black/80 to-transparent pointer-events-none" />
+                <p className="mt-3 text-xs text-hackerzart-muted">Prompt: Cyberpunk cityscape</p>
               </div>
               <div className="relative rounded-xl border border-hackerzart-border/20 p-6">
-                <div className="absolute inset-0 bg-gradient-to-b from-black/50 to-transparent pointer-events-none" />
-                <AsciiPanel 
+                <AsciiPanel
                   code={renderAscii({
                     prompt: 'Futuristic interface',
                     width: 60,
                     density: 'high',
                     contrast: 'medium'
                   })}
-                  className="ascii-panel border-hackerzart-border/50 shadow-ascii-glow hover:shadow-ascii-glow/50 transition-all" 
+                  className="ascii-panel border-hackerzart-border/50 shadow-ascii-glow hover:shadow-ascii-glow/50 transition-all"
                 />
-                <div className="absolute inset-0 bg-scanlines pointer-events-none" />
-                <div className="absolute inset-0 bg-grid pointer-events-none" />
-                <div className="absolute -bottom-4 left-0 right-0 h-4 bg-gradient-to-t from-black/80 to-transparent pointer-events-none" />
+                <p className="mt-3 text-xs text-hackerzart-muted">Prompt: Futuristic interface</p>
               </div>
             </div>
           </section>
@@ -137,27 +129,15 @@ export default function Home() {
               <p className="micro-label">HackerzArt / Style System</p>
               <h2 className="text-3xl font-semibold tracking-tight mt-2">Style System</h2>
             </div>
-            <div className="grid grid-cols-2 gap-4 md:grid-cols-5 relative before:absolute before:-left-6 before:top-0 before:bottom-0 before:w-px before:bg-gradient-to-b before:from-transparent before:via-hackerzart-secondary before:to-transparent">
-              {[
-                { name: 'Hacker', slug: 'hacker', desc: 'Cyberpunk signal processing' },
-                { name: 'Keygen', slug: 'keygen', desc: 'Digital authenticity markers' },
-                { name: 'Gothic', slug: 'gothic', desc: 'Ornate architectural forms' },
-                { name: 'Baroque', slug: 'baroque', desc: 'Classical decorative systems' },
-                { name: 'Terminal', slug: 'terminal', desc: 'Minimal machine interface' },
-              ].map((style) => (
-                <div 
+            <div className="grid grid-cols-2 gap-4 md:grid-cols-5">
+              {styles.map((style) => (
+                <div
                   key={style.slug}
-                  className="group relative aspect-square overflow-hidden rounded-xl border border-hackerzart-border/20 bg-hackerzart-surface/50 p-6 transition-all hover:border-hackerzart-accent/50 hover:shadow-glow hover:shadow-hackerzart-accent/20 style-card-hover animate-pulse"
-                  style={{
-                    animationDuration: `${Math.random() * 2 + 2}s`,
-                    animationDelay: `${Math.random() * 2}s`
-                  }}
+                  className="group relative aspect-square overflow-hidden rounded-xl border border-hackerzart-border/20 bg-hackerzart-surface/50 p-6 transition-all hover:border-hackerzart-accent/50 hover:shadow-glow"
                 >
-                  <div className={`absolute inset-0 bg-gradient-to-b from-hackerzart-styles-${style.slug}/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity`} />
-                  <div className="absolute inset-0 bg-hackerzart-styles-${style.slug}/5 animate-hover-glow opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
                   <div className="flex h-full flex-col justify-between">
                     <div className="flex items-center gap-2">
-                      <div className={`w-2 h-2 rounded-full bg-hackerzart-styles-${style.slug}`} />
+                      <div className="h-2 w-2 rounded-full bg-cyan-300" />
                       <span className="font-mono text-xs uppercase tracking-widest text-hackerzart-muted">
                         {style.slug}
                       </span>
